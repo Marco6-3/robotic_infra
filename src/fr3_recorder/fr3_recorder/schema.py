@@ -52,6 +52,8 @@ def build_lerobot_features() -> Dict[str, Dict[str, Any]]:
             "names": ["height", "width", "channel"],
         },
         "timestamp_ns": {"dtype": "int64", "shape": (1,), "names": ["timestamp_ns"]},
+        "action_timestamp_ns": {"dtype": "int64", "shape": (1,), "names": ["action_timestamp_ns"]},
+        "decision_timestamp_ns": {"dtype": "int64", "shape": (1,), "names": ["decision_timestamp_ns"]},
         "state_timestamp_ns": {
             "dtype": "int64",
             "shape": (1,),

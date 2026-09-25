@@ -8,6 +8,13 @@ from typing import Optional
 import numpy as np
 
 
+def physics_tick_for_frame(frame_index: int, physics_hz: int = 1000, policy_hz: int = 30) -> int:
+    """Ceiling of the ideal frame time, without 33-tick cumulative drift."""
+    if frame_index < 0 or policy_hz <= 0 or physics_hz < policy_hz:
+        raise ValueError("invalid frame index or frequencies")
+    return (frame_index * physics_hz + policy_hz - 1) // policy_hz
+
+
 @dataclass(frozen=True)
 class ScheduledTarget:
     timestamp_ns: int
@@ -39,10 +46,12 @@ class TargetInterpolator:
         value = np.asarray(target, dtype=np.float64)
         if value.shape != (self._size,):
             raise ValueError(f"target must have shape ({self._size},), got {value.shape}")
+        if not np.isfinite(value).all():
+            raise ValueError("target must contain only finite values")
         if timestamp_ns < 0:
             raise ValueError("timestamp_ns must be non-negative")
-        if self._current is not None and timestamp_ns < self._current.timestamp_ns:
-            raise ValueError("policy timestamps must be monotonic")
+        if self._current is not None and timestamp_ns <= self._current.timestamp_ns:
+            raise ValueError("policy timestamps must be strictly increasing; reset on a new episode")
         if self._current is None:
             self._current = ScheduledTarget(timestamp_ns, value.copy())
             self._ramp_start_ns = timestamp_ns

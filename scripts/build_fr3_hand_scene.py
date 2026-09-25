@@ -273,6 +273,16 @@ def build(
     ET.indent(scene, space="  ")
     scene_path = output_root / "scene.xml"
     ET.ElementTree(scene).write(scene_path, encoding="utf-8", xml_declaration=True)
+    limits = {
+        joint.get("name"): [float(x) for x in joint.get("range").split()]
+        for joint in arm.findall(".//joint")
+        if joint.get("name") in {f"fr3_joint{i}" for i in range(1, 8)} and joint.get("range")
+    }
+    lower = [limits[f"fr3_joint{i}"][0] for i in range(1, 8)]
+    upper = [limits[f"fr3_joint{i}"][1] for i in range(1, 8)]
+    (output_root / "control_limits.yaml").write_text(
+        f"fr3_policy_bridge:\n  ros__parameters:\n    arm_lower_limits: {lower}\n    arm_upper_limits: {upper}\n"
+    )
     return scene_path
 
 
@@ -287,7 +297,9 @@ def main() -> int:
         help="pinned official franka_description limits used to keep MJCF and URDF compatible",
     )
     args = parser.parse_args()
-    limits = args.fr3_joint_limits if args.fr3_joint_limits.exists() else None
+    if not args.fr3_joint_limits.is_file():
+        parser.error("pinned FR3 joint limits missing; run pixi run bootstrap first")
+    limits = args.fr3_joint_limits
     path = build(args.menagerie_root, args.output, limits)
     print(f"generated {path}")
     return 0

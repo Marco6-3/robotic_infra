@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Optional
 
 import numpy as np
 
@@ -51,7 +50,25 @@ class MujocoRobot(Robot):
         self._camera_width = camera_width
         self._camera_height = camera_height
         self._mapper = gripper_mapper
-        self._bridge = PolicyTargetBridge(gripper_mapper, interpolation=interpolation)
+        self._bridge = PolicyTargetBridge(
+            gripper_mapper, interpolation=interpolation,
+            arm_limits=self.model.jnt_range[self._arm_joints].copy(),
+        )
+        self.reset()
+
+    def reset(self) -> None:
+        """Reset to the model's home keyframe and discard the previous policy."""
+        if self.model.nkey:
+            self._mujoco.mj_resetDataKeyframe(self.model, self.data, 0)
+        else:
+            self._mujoco.mj_resetData(self.model, self.data)
+        self._bridge.reset()
+        self._mujoco.mj_forward(self.model, self.data)
+
+    def close(self) -> None:
+        if self._renderer is not None:
+            self._renderer.close()
+            self._renderer = None
 
     def _id(self, object_type, name: str) -> int:
         value = self._mujoco.mj_name2id(self.model, object_type, name)
@@ -59,8 +76,11 @@ class MujocoRobot(Robot):
             raise ValueError(f"MuJoCo model is missing {name!r}")
         return value
 
-    def send_action(self, action: Action) -> None:
-        self._bridge.submit(action)
+    def send_action(self, action: Action) -> Action:
+        now_ns = int(round(float(self.data.time) * 1_000_000_000))
+        if action.timestamp_ns != now_ns:
+            raise ValueError("direct simulation actions must be stamped at current simulation time")
+        return self._bridge.submit(action)
 
     def step(self) -> None:
         """Advance one 1 ms tick and apply the interpolated low-level target."""
@@ -85,6 +105,9 @@ class MujocoRobot(Robot):
         return Pose(position, [quaternion_wxyz[1], quaternion_wxyz[2], quaternion_wxyz[3], quaternion_wxyz[0]])
 
     def get_observation(self) -> Observation:
+        # mj_step integrates qpos/qvel after computing derived geometry. Refresh
+        # kinematics so the TCP and cameras correspond to the stamped state.
+        self._mujoco.mj_forward(self.model, self.data)
         timestamp_ns = int(round(float(self.data.time) * 1_000_000_000))
         q = np.array([self.data.qpos[self.model.jnt_qposadr[joint]] for joint in self._arm_joints])
         dq = np.array([self.data.qvel[self.model.jnt_dofadr[joint]] for joint in self._arm_joints])

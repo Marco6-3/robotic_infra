@@ -4,8 +4,8 @@ os:
   version: "24.04"
 ros_distro: jazzy
 mujoco:
-  version: 3.4.0
-  note: Matches the pinned mujoco_ros2_control documentation baseline.
+  version: 3.10.0
+  note: Python wheel and ROS vendor libmujoco must both match this version.
 lerobot:
   repository: https://github.com/huggingface/lerobot.git
   tag: v0.6.1

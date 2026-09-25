@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT / "src/fr3_sim"))
 
 from fr3_robot_api.gripper import GripperLimits, GripperMapper  # noqa: E402
 from fr3_robot_api.types import Action  # noqa: E402
+from fr3_robot_api.timing import physics_tick_for_frame  # noqa: E402
 from fr3_sim import MujocoRobot, MujocoUnavailable  # noqa: E402
 
 
@@ -30,6 +31,8 @@ def main() -> int:
     parser.add_argument("--scene", type=Path, default=ROOT / "src/fr3_description/models/scene.xml")
     parser.add_argument("--seconds", type=float, default=2.0)
     args = parser.parse_args()
+    if not np.isfinite(args.seconds) or args.seconds <= 0:
+        parser.error("--seconds must be finite and positive")
     mapper = GripperMapper(GripperLimits(0.0, 0.04, 0.0, 0.04))
     try:
         robot = MujocoRobot(args.scene, mapper, interpolation="hold")
@@ -38,13 +41,25 @@ def main() -> int:
         return 2
     home = np.array([0.0, -0.4, 0.0, -1.8, 0.0, 1.4, 0.7])
     ticks = int(round(args.seconds * 1000))
-    for tick in range(ticks):
-        if tick % 33 == 0:
-            timestamp_ns = int(round(tick * 1_000_000))
-            phase = 0.15 * np.sin(2.0 * np.pi * (tick / 1000.0))
-            robot.send_action(Action(timestamp_ns, home + phase, gripper_width_m=0.04, gripper_width_normalized=0.5))
-        robot.step()
-    print(f"smoke test complete: sim_time={robot.data.time:.6f}s")
+    frame = 0
+    initial = robot.data.qpos.copy()
+    try:
+        for tick in range(ticks):
+            if tick == physics_tick_for_frame(frame):
+                timestamp_ns = tick * 1_000_000
+                phase = 0.15 * np.sin(2.0 * np.pi * (tick / 1000.0))
+                robot.send_action(Action(timestamp_ns, home + phase, gripper_width_m=0.04))
+                frame += 1
+            robot.step()
+            if not np.isfinite(robot.data.qpos).all() or not np.isfinite(robot.data.qvel).all():
+                raise RuntimeError("non-finite simulator state")
+        if not np.isclose(robot.data.time, ticks / 1000, atol=1e-8):
+            raise RuntimeError("simulation did not advance as expected")
+        if ticks >= 100 and np.allclose(initial, robot.data.qpos):
+            raise RuntimeError("robot did not respond to commands")
+        print(f"smoke test complete: sim_time={robot.data.time:.6f}s, policy_frames={frame}")
+    finally:
+        robot.close()
     return 0
 
 

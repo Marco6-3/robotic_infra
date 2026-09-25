@@ -1,5 +1,6 @@
 from pathlib import Path
 import xml.etree.ElementTree as ET
+import pytest
 
 from fr3_robot_api.model_validation import (
     JointLimit,
@@ -53,6 +54,7 @@ def test_xml_joint_limit_parsers_cover_mujoco_and_ros(tmp_path):
     assert parse_urdf_joint_limits(urdf)["fr3_finger_joint1"].upper == 0.04
 
 
+@pytest.mark.integration
 def test_generated_mjcf_contract_has_one_tendon_gripper_and_two_rgb_cameras():
     model = Path(__file__).parents[1] / "src/fr3_description/models/fr3_hand.xml"
     root = ET.parse(model).getroot()

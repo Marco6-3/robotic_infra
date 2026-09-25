@@ -18,8 +18,12 @@ class Robot(ABC):
         """Return the latest synchronized policy observation."""
 
     @abstractmethod
-    def send_action(self, action: Action) -> None:
-        """Submit a 30 Hz policy action to the robot."""
+    def send_action(self, action: Action) -> Action:
+        """Validate and submit a policy target, returning its canonical form.
+
+        The returned value is the accepted high-level target for recording,
+        not a measurement of the robot or the intermediate interpolated target.
+        """
 
     def close(self) -> None:
         """Release resources; adapters may override this."""

@@ -9,6 +9,7 @@ can replace this transport without changing the Robot API or recorder.
 from __future__ import annotations
 
 import rclpy
+import numpy as np
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray
 
@@ -25,6 +26,12 @@ class PolicyBridgeNode(Node):
         self.declare_parameter("policy_action_topic", "/fr3/policy_action")
         self.declare_parameter("arm_command_topic", "/arm_position_controller/commands")
         self.declare_parameter("gripper_command_topic", "/gripper_position_controller/commands")
+        self.declare_parameter("arm_lower_limits", [0.0] * 7)
+        self.declare_parameter("arm_upper_limits", [0.0] * 7)
+        limits = np.array([self.get_parameter("arm_lower_limits").value,
+                           self.get_parameter("arm_upper_limits").value], dtype=float).T
+        if limits.shape != (7, 2) or not np.isfinite(limits).all() or np.any(limits[:, 0] >= limits[:, 1]):
+            raise ValueError("load generated models/control_limits.yaml through sim.launch.py")
         mapper = GripperMapper(GripperLimits(0.0, 0.04, 0.0, 0.04))
         self._arm_pub = self.create_publisher(
             Float64MultiArray, self.get_parameter("arm_command_topic").value, 10
@@ -36,7 +43,9 @@ class PolicyBridgeNode(Node):
             mapper,
             interpolation=str(self.get_parameter("interpolation").value),
             publish=self._publish_command,
+            arm_limits=limits,
         )
+        self._last_clock_ns = None
         self._subscription = self.create_subscription(
             Float64MultiArray,
             self.get_parameter("policy_action_topic").value,
@@ -49,13 +58,24 @@ class PolicyBridgeNode(Node):
         if len(message.data) != 9:
             self.get_logger().error("policy action must contain 9 values: q7, width_m, width_normalized")
             return
+        now = self._clock_tick()
+        try:
+            self._bridge.submit(Action(now, message.data[:7], message.data[7], message.data[8]))
+        except ValueError as exc:
+            self.get_logger().warning(f"Rejected policy action: {exc}")
+
+    def _clock_tick(self) -> int:
         now = self.get_clock().now().nanoseconds
-        self._bridge.submit(Action(now, message.data[:7], message.data[7], message.data[8]))
+        if self._last_clock_ns is not None and now < self._last_clock_ns:
+            self._bridge.reset()
+        self._last_clock_ns = now
+        return now
 
     def _on_low_level_tick(self) -> None:
-        if self._bridge.last_command is None:
+        now = self._clock_tick()
+        if not self._bridge.has_target:
             return
-        self._bridge.step(self.get_clock().now().nanoseconds)
+        self._bridge.step(now)
 
     def _publish_command(self, command) -> None:
         arm = Float64MultiArray()
