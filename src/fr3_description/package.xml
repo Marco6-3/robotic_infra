@@ -16,6 +16,7 @@
   <exec_depend>joint_state_broadcaster</exec_depend>
   <exec_depend>mujoco_ros2_control</exec_depend>
   <exec_depend>mujoco_ros2_control_plugins</exec_depend>
+  <exec_depend>fr3_control</exec_depend>
   <export>
     <build_type>ament_cmake</build_type>
   </export>

@@ -12,6 +12,8 @@ def _vector(value: Any, size: int, name: str) -> np.ndarray:
     array = np.asarray(value, dtype=np.float64)
     if array.shape != (size,):
         raise ValueError(f"{name} must have shape ({size},), got {array.shape}")
+    if not np.all(np.isfinite(array)):
+        raise ValueError(f"{name} must contain only finite values")
     return array.copy()
 
 
@@ -66,6 +68,15 @@ class Action:
         )
         if self.gripper_width_m is None and self.gripper_width_normalized is None:
             raise ValueError("one gripper representation is required")
+        if self.gripper_width_m is not None and (
+            not np.isfinite(self.gripper_width_m) or self.gripper_width_m < 0
+        ):
+            raise ValueError("gripper_width_m must be finite and non-negative")
+        if self.gripper_width_normalized is not None and (
+            not np.isfinite(self.gripper_width_normalized)
+            or not 0 <= self.gripper_width_normalized <= 1
+        ):
+            raise ValueError("gripper_width_normalized must be finite and in [0, 1]")
 
 
 @dataclass(frozen=True)
@@ -90,5 +101,5 @@ class Observation:
         object.__setattr__(self, "joint_velocity_rad_s", _vector(self.joint_velocity_rad_s, 7, "joint_velocity_rad_s"))
         if not 0.0 <= self.gripper_width_normalized <= 1.0:
             raise ValueError("gripper_width_normalized must be in [0, 1]")
-        if self.gripper_width_m < 0.0:
-            raise ValueError("gripper_width_m must be non-negative")
+        if not np.isfinite(self.gripper_width_m) or self.gripper_width_m < 0.0:
+            raise ValueError("gripper_width_m must be finite and non-negative")

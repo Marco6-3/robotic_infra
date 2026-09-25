@@ -2,6 +2,7 @@
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, LogInfo
+from launch.conditions import IfCondition
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterFile, ParameterValue
@@ -18,9 +19,20 @@ def generate_launch_description():
                 ),
             ),
             DeclareLaunchArgument("target_interpolation", default_value="linear"),
-            DeclareLaunchArgument("use_moveit", default_value="false"),
-            LogInfo(msg=["FR3 MuJoCo v1 profile; MoveIt enabled: ", LaunchConfiguration("use_moveit")]),
+            DeclareLaunchArgument("start_policy_bridge", default_value="true"),
             LogInfo(msg=["Target interpolation: ", LaunchConfiguration("target_interpolation")]),
+            Node(
+                package="fr3_control",
+                executable="fr3_policy_bridge",
+                condition=IfCondition(LaunchConfiguration("start_policy_bridge")),
+                parameters=[
+                    {"use_sim_time": True, "interpolation": LaunchConfiguration("target_interpolation")},
+                    ParameterFile(PathJoinSubstitution([
+                        FindPackageShare("fr3_description"), "models", "control_limits.yaml"
+                    ])),
+                ],
+                output="screen",
+            ),
             Node(
                 package="robot_state_publisher",
                 executable="robot_state_publisher",

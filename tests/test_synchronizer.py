@@ -14,7 +14,8 @@ class S:
 
 def test_nearest_sample_and_tolerance():
     samples = [S(0), S(1_000_000), S(2_000_000)]
-    assert nearest_by_timestamp(samples, 1_600_000).timestamp_ns == 2_000_000
+    assert nearest_by_timestamp(samples, 1_600_000).timestamp_ns == 1_000_000
+    assert nearest_by_timestamp(samples, 1_600_000, causal=False).timestamp_ns == 2_000_000
     assert nearest_by_timestamp(samples, 10_000_000, max_delta_ns=100) is None
 
 
@@ -30,7 +31,7 @@ def test_recorder_uses_external_camera_timeline_and_nearest_state():
     writer = FakeWriter()
     recorder = SynchronizedRecorder(writer)
     external = CameraFrame(1_000_000_000, np.zeros((480, 640, 3), dtype=np.uint8), "external")
-    wrist = [CameraFrame(1_000_100_000, np.ones((480, 640, 3), dtype=np.uint8), "wrist")]
+    wrist = [CameraFrame(999_900_000, np.ones((480, 640, 3), dtype=np.uint8), "wrist")]
     state = Observation(
         timestamp_ns=999_900_000,
         state_timestamp_ns=999_900_000,
@@ -45,5 +46,5 @@ def test_recorder_uses_external_camera_timeline_and_nearest_state():
     action = Action(1_000_000_000, np.zeros(7), 0.04, 0.5)
     assert recorder.record_frame(external, wrist, [state], action)
     assert writer.frames[0]["timestamp_ns"].item() == 1_000_000_000
-    assert writer.frames[0]["wrist_timestamp_ns"].item() == 1_000_100_000
+    assert writer.frames[0]["wrist_timestamp_ns"].item() == 999_900_000
     assert writer.frames[0]["state_timestamp_ns"].item() == 999_900_000

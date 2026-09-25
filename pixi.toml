@@ -17,12 +17,16 @@ LIBRARY_PATH = "${CONDA_PREFIX}/lib:${LIBRARY_PATH}"
 LD_LIBRARY_PATH = "${CONDA_PREFIX}/lib:${LD_LIBRARY_PATH}"
 
 [dependencies]
-python = ">=3.11,<3.13"
+python = ">=3.12,<3.13"
 setuptools = ">=75,<76"
-numpy = "*"
+numpy = ">=2,<2.3"
 pytest = ">=7,<9"
 pip = "*"
-cmake = ">=3.22,<5"
+cmake = ">=3.29,<4.2"
+cxx-compiler = "*"
+pkg-config = "*"
+fmt = "*"
+libcap = "*"
 ninja = "*"
 colcon-common-extensions = ">=0.3,<1"
 vcstool = ">=0.3,<1"
@@ -36,16 +40,24 @@ ros-jazzy-xacro = "*"
 ros-jazzy-mujoco-vendor = "*"
 ros-jazzy-python-orocos-kdl-vendor = "*"
 ros-jazzy-urdfdom-py = "*"
+ros-jazzy-backward-ros = "*"
+ros-jazzy-control-toolbox = "*"
+libmujoco = "==3.10.0"
+pyyaml = "*"
 
 [pypi-dependencies]
-mujoco = "==3.4.0"
+mujoco = "==3.10.0"
 
 [tasks]
 bootstrap = "vcs import . < repos/models.repos && vcs import . < repos/third_party.repos"
 verify-pins = "python scripts/verify_pins.py"
-generate-model = "python scripts/build_fr3_hand_scene.py"
-build = { cmd = "colcon build --symlink-install", depends-on = ["generate-model"] }
-test = "pytest -q"
-smoke-test = "python scripts/smoke_test.py"
+generate-model = { cmd = "python scripts/build_fr3_hand_scene.py", depends-on = ["verify-pins"] }
+build = { cmd = "colcon build --symlink-install --base-paths src third_party/franka_description --packages-up-to fr3_description fr3_sim fr3_recorder --cmake-args -DBUILD_TESTING=OFF", depends-on = ["generate-model", "verify-runtime"] }
+test = "python -m pytest -q"
+test-model = { cmd = "python -m pytest -q -o addopts='' -m integration", depends-on = ["generate-model"] }
+smoke-test = { cmd = "python scripts/smoke_test.py", depends-on = ["generate-model"] }
+verify-runtime = "python scripts/verify_runtime.py"
+install-recording = "python scripts/install_recording.py"
+record-smoke = { cmd = ".venv-recording/bin/python scripts/record_smoke.py", depends-on = ["generate-model"] }
 clean = "rm -rf build install log"
 sim = { cmd = "bash -lc 'source install/setup.bash && ros2 launch fr3_description sim.launch.py'", depends-on = ["build"] }

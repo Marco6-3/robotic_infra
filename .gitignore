@@ -2,6 +2,7 @@ build/
 install/
 log/
 .pixi/
+.venv-recording/
 .pytest_cache/
 __pycache__/
 *.egg-info/

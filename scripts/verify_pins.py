@@ -5,14 +5,15 @@ from __future__ import annotations
 
 import subprocess
 from pathlib import Path
+import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 EXPECTED = {
-    ROOT / "third_party/mujoco_menagerie": "32224735cf004df068cd29ba099459f71bcd7d21",
-    ROOT / "third_party/franka_description": "7aeeddc449edf8d62b594f9e36a81da53e7796f9",
-    ROOT / "src/mujoco_ros2_control": "0b6b57b9afd2ea6f95e37738ca8f63b8be7f15f5",
+    ROOT / path: spec["version"]
+    for manifest in ("models.repos", "third_party.repos")
+    for path, spec in yaml.safe_load((ROOT / "repos" / manifest).read_text())["repositories"].items()
 }
 
 
