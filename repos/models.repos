@@ -1,0 +1,9 @@
+repositories:
+  third_party/mujoco_menagerie:
+    type: git
+    url: https://github.com/google-deepmind/mujoco_menagerie.git
+    version: 32224735cf004df068cd29ba099459f71bcd7d21
+  third_party/franka_description:
+    type: git
+    url: https://github.com/frankarobotics/franka_description.git
+    version: 7aeeddc449edf8d62b594f9e36a81da53e7796f9

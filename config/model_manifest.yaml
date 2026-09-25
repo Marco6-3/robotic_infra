@@ -1,0 +1,40 @@
+schema_version: 1
+robot: fr3
+end_effector: franka_hand
+os:
+  name: ubuntu
+  version: "24.04"
+ros_distro: jazzy
+
+# Menagerie is a Git repository. Keep both the human-readable tag and the
+# immutable commit so a moving branch can never silently change the model.
+mujoco_menagerie:
+  repository: https://github.com/google-deepmind/mujoco_menagerie.git
+  tag: v2026.9.0
+  commit: 32224735cf004df068cd29ba099459f71bcd7d21
+  model_root: franka_fr3
+  arm_scene: franka_fr3/scene.xml
+  generated_scene: src/fr3_description/models/scene.xml
+  hand_source: franka_emika_panda/hand.xml
+
+franka_description:
+  repository: https://github.com/frankarobotics/franka_description.git
+  tag: 2.9.0
+  commit: 7aeeddc449edf8d62b594f9e36a81da53e7796f9
+  robot_type: fr3
+  ee_id: franka_hand
+
+# The exact joint mapping is validated after both descriptions are available.
+arm_joints:
+  - fr3_joint1
+  - fr3_joint2
+  - fr3_joint3
+  - fr3_joint4
+  - fr3_joint5
+  - fr3_joint6
+  - fr3_joint7
+gripper_joints:
+  - fr3_finger_joint1
+  - fr3_finger_joint2
+gripper_actuated_joint: fr3_finger_joint1
+gripper_tendon: fr3_split

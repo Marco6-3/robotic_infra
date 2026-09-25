@@ -1,0 +1,23 @@
+cameras:
+  external:
+    type: mujoco_rgb
+    model: intel_realsense_d435_rgb
+    resolution: [640, 480]
+    fps: 30
+    fov_y_deg: 42.5
+    depth: false
+    noise: false
+    latency_s: 0.0
+    jitter_s: 0.0
+    dropped_frames: false
+  wrist:
+    type: mujoco_rgb
+    model: intel_realsense_d435_rgb
+    resolution: [640, 480]
+    fps: 30
+    fov_y_deg: 42.5
+    depth: false
+    noise: false
+    latency_s: 0.0
+    jitter_s: 0.0
+    dropped_frames: false

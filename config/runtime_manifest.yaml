@@ -1,0 +1,18 @@
+schema_version: 1
+os:
+  name: ubuntu
+  version: "24.04"
+ros_distro: jazzy
+mujoco:
+  version: 3.4.0
+  note: Matches the pinned mujoco_ros2_control documentation baseline.
+lerobot:
+  repository: https://github.com/huggingface/lerobot.git
+  tag: v0.6.1
+  commit: 7e241bd630a3719a56157a497ce5d08f244784f1
+  fps: 30
+  use_videos: true
+  codec: default
+mujoco_ros2_control:
+  repository: https://github.com/Gabriel-Ning/mujoco_ros2_control.git
+  commit: 0b6b57b9afd2ea6f95e37738ca8f63b8be7f15f5

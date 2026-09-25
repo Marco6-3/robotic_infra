@@ -1,0 +1,16 @@
+/**:
+  ros__parameters:
+    mujoco_plugins:
+      fr3_rgb_cameras:
+        type: "mujoco_ros2_control_plugins/CameraPlugin"
+        camera_publish_rate: 30.0
+        external:
+          policy: streaming
+          frame_name: external_camera_color_optical_frame
+          info_topic: /fr3/cameras/external/camera_info
+          image_topic: /fr3/cameras/external/color/image_raw
+        wrist:
+          policy: streaming
+          frame_name: wrist_camera_color_optical_frame
+          info_topic: /fr3/cameras/wrist/camera_info
+          image_topic: /fr3/cameras/wrist/color/image_raw

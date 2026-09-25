@@ -1,0 +1,6 @@
+schema_version: 1
+robot_type: fr3
+ee_id: franka_hand
+mujoco_scene: models/scene.xml
+ros_description: third_party/franka_description
+note: Resolve paths from the workspace root; verify with scripts/verify_pins.py.

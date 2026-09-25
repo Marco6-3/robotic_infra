@@ -1,0 +1,51 @@
+[workspace]
+name = "fr3_mujoco_platform"
+version = "0.1.0"
+authors = ["FR3 Platform"]
+channels = [
+  "https://prefix.dev/conda-forge",
+  "https://prefix.dev/robostack-jazzy",
+]
+platforms = ["linux-aarch64", "linux-64"]
+preview = ["pixi-build"]
+
+[activation.env]
+ROS_DISTRO = "jazzy"
+CMAKE_INSTALL_MODE = "SYMLINK"
+COLCON_DEFAULT_OUTPUT_STYLE = "catkin_tools"
+LIBRARY_PATH = "${CONDA_PREFIX}/lib:${LIBRARY_PATH}"
+LD_LIBRARY_PATH = "${CONDA_PREFIX}/lib:${LD_LIBRARY_PATH}"
+
+[dependencies]
+python = ">=3.11,<3.13"
+setuptools = ">=75,<76"
+numpy = "*"
+pytest = ">=7,<9"
+pip = "*"
+cmake = ">=3.22,<5"
+ninja = "*"
+colcon-common-extensions = ">=0.3,<1"
+vcstool = ">=0.3,<1"
+glfw = ">=3.4,<4"
+ros-jazzy-ros-base = "*"
+ros-jazzy-ros2-control = "*"
+ros-jazzy-ros2-control-cmake = "*"
+ros-jazzy-ros2-controllers = "*"
+ros-jazzy-robot-state-publisher = "*"
+ros-jazzy-xacro = "*"
+ros-jazzy-mujoco-vendor = "*"
+ros-jazzy-python-orocos-kdl-vendor = "*"
+ros-jazzy-urdfdom-py = "*"
+
+[pypi-dependencies]
+mujoco = "==3.4.0"
+
+[tasks]
+bootstrap = "vcs import . < repos/models.repos && vcs import . < repos/third_party.repos"
+verify-pins = "python scripts/verify_pins.py"
+generate-model = "python scripts/build_fr3_hand_scene.py"
+build = { cmd = "colcon build --symlink-install", depends-on = ["generate-model"] }
+test = "pytest -q"
+smoke-test = "python scripts/smoke_test.py"
+clean = "rm -rf build install log"
+sim = { cmd = "bash -lc 'source install/setup.bash && ros2 launch fr3_description sim.launch.py'", depends-on = ["build"] }

@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.8)
+project(fr3_description)
+
+find_package(ament_cmake REQUIRED)
+
+install(DIRECTORY config launch resource urdf
+  DESTINATION share/${PROJECT_NAME}
+)
+install(DIRECTORY models
+  DESTINATION share/${PROJECT_NAME}
+)
+
+ament_package()

@@ -1,0 +1,27 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000
+    arm_position_controller:
+      type: forward_command_controller/ForwardCommandController
+    gripper_position_controller:
+      type: forward_command_controller/ForwardCommandController
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+arm_position_controller:
+  ros__parameters:
+    joints:
+      - fr3_joint1
+      - fr3_joint2
+      - fr3_joint3
+      - fr3_joint4
+      - fr3_joint5
+      - fr3_joint6
+      - fr3_joint7
+    interface_name: position
+
+gripper_position_controller:
+  ros__parameters:
+    joints:
+      - fr3_finger_joint1
+    interface_name: position

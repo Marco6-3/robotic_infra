@@ -1,0 +1,9 @@
+timing:
+  mujoco_physics_hz: 1000
+  mujoco_timestep_s: 0.001
+  low_level_control_hz: 1000
+  policy_hz: 30
+  recorder_hz: 30
+  target_interpolation: linear
+  # Set to hold for exact zero-order-hold action semantics.
+  allowed_target_interpolation: [hold, linear]

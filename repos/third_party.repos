@@ -1,0 +1,6 @@
+repositories:
+  src/mujoco_ros2_control:
+    type: git
+    url: https://github.com/Gabriel-Ning/mujoco_ros2_control.git
+    # Pinned snapshot of the repository used by this v1 scaffold.
+    version: 0b6b57b9afd2ea6f95e37738ca8f63b8be7f15f5

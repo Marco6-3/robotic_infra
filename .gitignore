@@ -1,0 +1,13 @@
+build/
+install/
+log/
+.pixi/
+.pytest_cache/
+__pycache__/
+*.egg-info/
+datasets/
+third_party/
+src/mujoco_ros2_control/
+generated/
+src/fr3_description/models/*
+!src/fr3_description/models/.gitkeep
