@@ -10,5 +10,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install 'numpy>=2,<2.3' 'pytest>=7,<9' pyyaml
-      - run: python -m pytest -q
+      # Keep this job independent of MuJoCo, GUI, ROS and recording runtimes.
+      # Model/runtime checks are selected separately by `pixi run test-model`.
+      - name: Install contract dependencies
+        run: python -m pip install 'numpy>=2,<2.3' 'pytest>=7,<9' pyyaml
+      - name: Run Python contracts
+        run: python -m pytest -q -ra

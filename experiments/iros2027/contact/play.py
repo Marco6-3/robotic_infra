@@ -8,10 +8,9 @@ from pathlib import Path
 from threading import Event
 import threading
 
-from experiments.iros2027.contact.run import ROOT, run_episode
 from experiments.iros2027.contact.settings import Settings, load_config
-import mujoco
-import mujoco.viewer
+
+ROOT = Path(__file__).resolve().parents[3]
 
 
 class PreviewCommand(Exception):
@@ -55,6 +54,10 @@ class Preview:
             print(f'预览：{self.command}', flush=True)
 
     def bind(self, env):
+        # Keyboard controls and CLI help do not require the optional GUI runtime.
+        import mujoco
+        import mujoco.viewer
+
         if self.handle is None:
             self.model = mujoco.MjModel.from_xml_string(env.xml)
             self.data = mujoco.MjData(self.model)
@@ -92,6 +95,8 @@ class Preview:
             raise PreviewCommand(action)
 
     def update(self, env, tick, diagnostics):
+        import mujoco
+
         self.check()
         if tick % 16:
             return
@@ -146,6 +151,8 @@ def main():
     names = [c['name'] for c in config['conditions']]
     if args.condition not in names:
         parser.error(f'unknown condition; choose from {names}')
+    from experiments.iros2027.contact.run import run_episode
+
     index = names.index(args.condition)
     viewer = Preview(args.speed)
     print('可视化预览：自动循环；空格暂停，R 重来，N 下一条件，Q 退出。按键焦点放在仿真窗口。', flush=True)

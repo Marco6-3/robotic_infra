@@ -3,11 +3,8 @@ from __future__ import annotations
 import hashlib,json,time
 from pathlib import Path
 import numpy as np
-import mujoco
-from experiments.iros2027.contact.run import ROOT
-from experiments.iros2027.contact.task import DisturbedGrasp
-from experiments.iros2027.contact.settings import TaskSettings
-from fr3_sim.contact_proxy import ContactProxy
+
+ROOT = Path(__file__).resolve().parents[3]
 
 
 def resolution(config):
@@ -55,6 +52,14 @@ def slip_label(speed,contacts):
 
 
 def simulate(job):
+    # Pure observation/matching helpers are also used by lightweight contracts.
+    import mujoco
+    # Import run before the adapters to preserve its standalone source-path setup.
+    from experiments.iros2027.contact.run import ROOT
+    from experiments.iros2027.contact.task import DisturbedGrasp
+    from experiments.iros2027.contact.settings import TaskSettings
+    from fr3_sim.contact_proxy import ContactProxy
+
     seed,variant,split,c,directory=job
     path=Path(directory)/f'{split}-{seed}-{variant:02}.npz'
     if path.exists():
