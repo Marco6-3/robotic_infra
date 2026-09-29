@@ -2,6 +2,79 @@
 
 这是 FR3 机器人学习平台的仿真优先实现。项目在 **Ubuntu 24.04 + ROS 2 Jazzy** 目标环境中，通过 `mujoco_ros2_control` 使用 MuJoCo，并让学习接口独立于 ROS 话题名和控制器名。
 
+## 第一次使用：先看自动抓取实验
+
+```bash
+cd /home/mingzhe/Documents/ws/robotic_infra
+pixi run contact-play     # 看真实物理实验，半速自动重播
+pixi run contact-eval     # 无窗口批量运行并保存数据
+pixi run contact-report RUN_PATH  # 用上一条输出的 Results 目录查看汇总
+```
+
+在仿真窗口按空格暂停、`R` 重来、`N` 下一条件、`Q` 退出，无需另开键盘控制终端。
+详细使用方式、配置修改和参考仓库见 [实验工作流](docs/experiment_workflow.md)。
+`sim-nvidia` 是 ROS 基础场景入口，`keyboard_policy.py` 只用于关节命令链路测试。
+
+
+## 本机运行与策略验收（2026-09-26）
+
+本机环境使用项目 `.pixi`（ROS/MuJoCo）与 `.venv-recording`（LeRobot/ACT/CUDA）
+分开管理，无需安装系统 ROS 或修改 NVIDIA 驱动。具体实测结果见 [VALIDATION.md](VALIDATION.md)。
+ML 安装和验收入口会清除子进程的 `PYTHONPATH` / `PYTHONHOME`，避免 RoboStack
+激活环境将 ROS 的同名 Python 包注入虚拟环境。手动从 `pixi shell` 调用录制环境时也应清除这两个变量。
+
+```bash
+cd /home/mingzhe/Documents/ws/robotic_infra
+pixi run test
+pixi run test-model
+pixi run ros-smoke      # 自动构建、启动无窗口 ROS 仿真、测试动作/双相机并退出
+pixi run policy-smoke   # ACT 双相机 CUDA 训练/推理冒烟和直接 MuJoCo 闭环
+pixi run record-smoke   # 两段视频数据录制并逐帧读回
+pixi run iros-stage0    # 检查 I001/I002 配置、场景锚点和多频率因果调度
+pixi run i002-smoke     # 检查异步通信、延迟/丢包/staleness 和可恢复运行目录
+pixi run sim-nvidia     # 本机双显卡：使用 NVIDIA 打开交互式 MuJoCo 窗口
+```
+
+首次使用策略环境时执行 `pixi run install-policy`。该入口选择 PyTorch 2.8.0、
+torchvision 0.23.0、CUDA 12.8 和配套 torchcodec 0.7.0；不会让 pip 改写 ROS 环境。
+本机完整已验证的 Python 包版本另保存在 `config/requirements-policy-linux64.lock.txt`。
+安装器支持 `--index-url`、`--torch-index-url` 和 `--lerobot-source`，可以在网络不稳定时
+使用包镜像与已验证的本地 LeRobot checkout，参数只影响本次安装。
+
+`ros-smoke` 默认使用独立的 ROS domain 173 和本机发现范围，输出位于
+`runs/ros-*/`；可通过 `ROS_DOMAIN_ID` 指定其他空闲 domain。日志中的实时调度权限提示
+不影响普通仿真，但本项目不承诺 1 kHz 硬实时性能。
+
+`policy-smoke` 使用固定提交的 LeRobot ACT 实现和 ResNet18 双相机编码器，
+将原始 640×480 图像缩放为 128×96，使用小型 Transformer 配置降低显存占用。
+默认进行 20 次优化、检查点保存/读回和 30 帧仿真闭环。输出包含配置、损失、耗时、
+显存峰值、检查点 SHA-256 和相机图片，位于 `runs/act-*/`。模型动作在此测试中定义为
+相对 home 的关节残差（0.1 rad 尺度）与归一化夹爪宽度，执行前限制范围并统计限幅次数。
+这不是仓库录制格式的 9 维绝对动作；接入其他数据集需要对应的动作适配。
+
+```bash
+# 继续本脚本自己的检查点；--steps 表示累计优化步数
+env -u PYTHONPATH -u PYTHONHOME .venv-recording/bin/python scripts/policy_smoke.py \
+  --resume runs/act-时间戳/checkpoint.pt --steps 40
+```
+
+此测试仅使用两帧本地脚本样本验证计算和控制链路，没有预训练任务权重，也没有
+抓取任务、训练/验证数据集划分或成功率评测。它不证明视觉泛化或操作能力。
+上述策略冒烟的基础场景有操作台和接触力代理，但不包含动态任务物体、视觉触觉图像后端或任务判据。
+独立的 `contact-play/contact-eval` 已包含动态方块和任务判据；
+因此仍不能把策略冒烟测试解释为正式操作实验。
+
+RoboTwin 是另一套基于 SAPIEN 的任务平台，其官方基础环境为 Python 3.10，
+需要单独下载任务资产及配置策略；本项目的 FR3/MuJoCo 环境不能直接作为其运行环境。
+本次选择 ACT 验证本项目策略链路，未把它记为 RoboTwin 基准通过。
+参考 [RoboTwin 安装说明](https://robotwin-platform.github.io/doc/usage/robotwin-install.html)。
+
+ROS 构建还会自动应用 `patches/mujoco-ros2-control-librt.patch`，为固定上游的共享内存
+相机目标补上 Linux `librt` 链接。图形开发库由 Pixi 显式提供；ROS 与直接 MuJoCo
+统一从模型 `home` keyframe 启动。腕部相机朝向已修正为夹爪前方工作区，避免手掌外壳
+遮挡整个画面。`sim` 保留系统默认显卡选择；本机测试默认路径相机约 12 Hz，
+`sim-nvidia` 约 28 Hz，无窗口约 29 Hz。这些是短时测量，不是性能保证。
+
 ## v1 固定约定
 
 - Franka Research 3 机械臂和 Franka Hand 夹爪。
@@ -10,11 +83,31 @@
 - 机械臂动作是 7 个关节位置目标。
 - 夹爪动作同时提供米制实际宽度和 `[0, 1]` 归一化值。
 - 两个 RGB 相机：固定外部相机和腕部相机，均为 `640x480 @ 30 FPS`。
+- I002 默认部署观测是安装在左右内指腹的两路 DIGIT 类 RGB 视觉触觉，参考规格
+  `640x480 @ 60 Hz`；策略输入可缩放到 `160x120`，原始视频和 source timestamp 必须保留。
+- 两个 MuJoCo fingertip normal force 仅作为 privileged label，不是策略默认输入，也不是
+  触觉图像或真实硬件传感器模型。
 - 不模拟相机噪声、延迟、抖动和丢帧。
 - 录制器使用 LeRobot 视频存储，不把 RGB 帧永久保存成单张图片。
 - MoveIt 只用于可选验证，不是策略运行依赖。
 
 低层目标桥支持零阶保持和因果线性插值。默认线性模式在收到新的 30 Hz 目标后开始插值，并在推断出的策略周期内到达目标；需要立即采用零阶保持时使用 `hold` 模式。
+
+## 操作台与实验工作区
+
+生成场景包含一个位于机器人前方的静态可碰撞操作台：台面尺寸为
+`0.90 x 0.90 x 0.05 m`，台面高度为 `0.40 m`，并定义
+`task_workspace_center = [0.60, 0.00, 0.405] m` 作为任务物体的默认放置锚点。
+当前 FR3 模型安装在地面原点；常见的 `0.7--0.8 m` 人体工位会与现有 home 姿态相交，
+因此这里使用低矮研究台。该尺寸服务于仿真可达性，不代表最终真机安装尺寸。
+
+纯接口、图像和时序冒烟不依赖操作台；抓取、滑移恢复、插入和接触转换实验必须使用
+操作台或等价接触环境。操作台和 touch sensor 本身仍不构成任务，正式实验还需要动态物体、
+随机化、传感器噪声模型以及可自动计算的成功/失败条件。
+
+I002 已具备确定性的异步通信 smoke、延迟/抖动/丢包注入、双向消息、staleness gate 和
+可恢复 run 目录。完整实验阶梯见
+[`experiments/iros2027/i002/EXPERIMENT_PROTOCOL.md`](experiments/iros2027/i002/EXPERIMENT_PROTOCOL.md)。
 
 ## 目录结构
 
@@ -27,6 +120,7 @@ src/fr3_description/ ROS 包、控制器/相机配置和启动文件
 config/              固定模型和运行时清单
 repos/               可复现的第三方 checkout 清单
 tests/               与依赖无关的接口和时序测试
+experiments/iros2027/ I001/I002 的配置、因果调度检查和后续论文实验
 ```
 
 ## 可复现的模型输入
@@ -168,7 +262,7 @@ pixi run record-smoke
 需要改变验收规模时：
 
 ```bash
-.venv-recording/bin/python scripts/record_smoke.py --episodes 2 --frames 60
+env -u PYTHONPATH -u PYTHONHOME .venv-recording/bin/python scripts/record_smoke.py --episodes 2 --frames 60
 ```
 
 ## 本机 ROS 验收

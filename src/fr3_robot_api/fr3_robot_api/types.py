@@ -49,6 +49,57 @@ class CameraFrame:
 
 
 @dataclass(frozen=True)
+class TactileFrame:
+    """Timestamped low-dimensional tactile/contact channels or privileged labels."""
+
+    timestamp_ns: int
+    values: np.ndarray
+    channel_names: tuple[str, ...]
+    source_name: str
+    metadata: Mapping[str, Any] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        if self.timestamp_ns < 0:
+            raise ValueError("timestamp_ns must be non-negative")
+        values = np.asarray(self.values, dtype=np.float64)
+        if values.ndim != 1 or values.size == 0:
+            raise ValueError("tactile values must be a non-empty vector")
+        if not np.all(np.isfinite(values)):
+            raise ValueError("tactile values must contain only finite values")
+        if len(self.channel_names) != values.size:
+            raise ValueError("channel_names length must match tactile values")
+        if len(set(self.channel_names)) != len(self.channel_names):
+            raise ValueError("tactile channel names must be unique")
+        if not self.source_name:
+            raise ValueError("source_name must not be empty")
+        object.__setattr__(self, "values", values.copy())
+
+
+@dataclass(frozen=True)
+class VisionTactileFrame:
+    """Raw RGB frame from one camera-based tactile sensor."""
+
+    timestamp_ns: int
+    rgb: Any
+    sensor_name: str
+    sequence: int
+    arrival_timestamp_ns: Optional[int] = None
+    metadata: Mapping[str, Any] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        if self.timestamp_ns < 0 or self.sequence < 0:
+            raise ValueError("timestamp_ns and sequence must be non-negative")
+        if self.arrival_timestamp_ns is not None and self.arrival_timestamp_ns < self.timestamp_ns:
+            raise ValueError("arrival_timestamp_ns cannot precede the source timestamp")
+        if not self.sensor_name:
+            raise ValueError("sensor_name must not be empty")
+        image = np.asarray(self.rgb)
+        if image.ndim != 3 or image.shape[2] != 3 or image.dtype != np.uint8:
+            raise ValueError("vision tactile RGB must be uint8 HxWx3")
+        object.__setattr__(self, "rgb", image.copy())
+
+
+@dataclass(frozen=True)
 class Action:
     """Policy action at the 30 Hz boundary."""
 
@@ -92,6 +143,8 @@ class Observation:
     external_rgb: CameraFrame
     wrist_rgb: CameraFrame
     state_timestamp_ns: Optional[int] = None
+    tactile: Optional[TactileFrame] = None
+    vision_tactile: tuple[VisionTactileFrame, ...] = ()
     metadata: Mapping[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -103,3 +156,10 @@ class Observation:
             raise ValueError("gripper_width_normalized must be in [0, 1]")
         if not np.isfinite(self.gripper_width_m) or self.gripper_width_m < 0.0:
             raise ValueError("gripper_width_m must be finite and non-negative")
+        vision_tactile = tuple(self.vision_tactile)
+        sensor_names = tuple(frame.sensor_name for frame in vision_tactile)
+        if len(sensor_names) != len(set(sensor_names)):
+            raise ValueError("vision tactile sensor names must be unique")
+        if any(frame.timestamp_ns > self.timestamp_ns for frame in vision_tactile):
+            raise ValueError("vision tactile frames cannot come from the future")
+        object.__setattr__(self, "vision_tactile", vision_tactile)

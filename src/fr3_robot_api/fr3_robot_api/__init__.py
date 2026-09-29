@@ -3,11 +3,13 @@
 from .gripper import GripperLimits, GripperMapper
 from .camera import ArrayCamera, Camera, CameraConfig
 from .robot import Robot
-from .types import Action, CameraFrame, Observation, Pose
+from .tactile import ArrayVisionTactileSource, VisionTactileConfig, VisionTactileSource
+from .types import Action, CameraFrame, Observation, Pose, TactileFrame, VisionTactileFrame
 
 __all__ = [
     "Action",
     "ArrayCamera",
+    "ArrayVisionTactileSource",
     "Camera",
     "CameraConfig",
     "CameraFrame",
@@ -16,4 +18,8 @@ __all__ = [
     "Observation",
     "Pose",
     "Robot",
+    "TactileFrame",
+    "VisionTactileConfig",
+    "VisionTactileFrame",
+    "VisionTactileSource",
 ]

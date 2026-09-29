@@ -44,20 +44,33 @@ ros-jazzy-backward-ros = "*"
 ros-jazzy-control-toolbox = "*"
 libmujoco = "==3.10.0"
 pyyaml = "*"
+libopengl-devel = ">=1.7.0,<2"
+libegl-devel = ">=1.7.0,<2"
 
 [pypi-dependencies]
 mujoco = "==3.10.0"
 
 [tasks]
+contact-play = "env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia python -m experiments.iros2027.contact.play"
+contact-eval = "python -m experiments.iros2027.contact.run"
+contact-report = "python -m experiments.iros2027.contact.report"
+contact-foundation = "python -m experiments.iros2027.contact.run"
 bootstrap = "vcs import . < repos/models.repos && vcs import . < repos/third_party.repos"
 verify-pins = "python scripts/verify_pins.py"
 generate-model = { cmd = "python scripts/build_fr3_hand_scene.py", depends-on = ["verify-pins"] }
-build = { cmd = "colcon build --symlink-install --base-paths src third_party/franka_description --packages-up-to fr3_description fr3_sim fr3_recorder --cmake-args -DBUILD_TESTING=OFF", depends-on = ["generate-model", "verify-runtime"] }
+prepare-vendor = { cmd = "python scripts/prepare_vendor.py", depends-on = ["verify-pins"] }
+build = { cmd = "colcon build --symlink-install --base-paths src third_party/franka_description --packages-up-to fr3_description fr3_sim fr3_recorder --parallel-workers 3 --cmake-args -DBUILD_TESTING=OFF", depends-on = ["generate-model", "verify-runtime", "prepare-vendor"] }
 test = "python -m pytest -q"
 test-model = { cmd = "python -m pytest -q -o addopts='' -m integration", depends-on = ["generate-model"] }
 smoke-test = { cmd = "python scripts/smoke_test.py", depends-on = ["generate-model"] }
 verify-runtime = "python scripts/verify_runtime.py"
 install-recording = "python scripts/install_recording.py"
-record-smoke = { cmd = ".venv-recording/bin/python scripts/record_smoke.py", depends-on = ["generate-model"] }
+install-policy = "python scripts/install_recording.py --cuda"
+policy-smoke = { cmd = "env -u PYTHONPATH -u PYTHONHOME .venv-recording/bin/python scripts/policy_smoke.py", depends-on = ["generate-model"] }
+iros-stage0 = { cmd = "python experiments/iros2027/stage0.py", depends-on = ["generate-model"] }
+i002-smoke = { cmd = "python -m experiments.iros2027.i002.run_smoke", depends-on = ["generate-model"] }
+ros-smoke = { cmd = "bash -c 'source install/setup.bash && python scripts/ros_smoke.py --launch'", depends-on = ["build"] }
+record-smoke = { cmd = "env -u PYTHONPATH -u PYTHONHOME .venv-recording/bin/python scripts/record_smoke.py", depends-on = ["generate-model"] }
 clean = "rm -rf build install log"
 sim = { cmd = "bash -lc 'source install/setup.bash && ros2 launch fr3_description sim.launch.py'", depends-on = ["build"] }
+sim-nvidia = { cmd = "env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia bash -c 'source install/setup.bash && ros2 launch fr3_description sim.launch.py'", depends-on = ["build"] }

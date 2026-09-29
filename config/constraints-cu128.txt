@@ -1,0 +1,5 @@
+# Validated Linux x86_64 / RTX 50-series stack. Install torch from the cu128 index.
+torch==2.8.0
+torchvision==0.23.0
+torchcodec==0.7.0
+numpy==2.2.6

@@ -1,0 +1,36 @@
+# 物理任务与指标时间点固定为 4 秒协议；这些参数用于有窗口和无窗口入口。
+task:
+  mass_range_kg: [0.055, 0.075]
+  friction_range: [0.65, 0.85]
+  disturbance_range_n: [5.5, 6.5]
+sensor:
+  hz: 200
+  noise_std_n: 0.01
+  max_age_ms: 200
+controller:
+  fast_hz: 100
+  semantic_hz: 5
+  semantic_max_age_ms: 250
+  max_closure_m: 0.016
+  step_m: 0.002
+  force_limit_n: 12
+  shear_ratio_threshold: 0.45
+# Separate contact-proxy experiment. Does not replace I002 DIGIT RGB configuration.
+seeds: [0, 1, 2]
+conditions:
+  - name: nominal
+    mode: nominal
+  - name: fast
+    mode: fast
+  - name: tactile_delay_100ms
+    mode: fast
+    sensor_delay_ms: 100
+  - name: semantic_delay_300ms
+    mode: fast
+    semantic_delay_ms: 300
+  - name: nominal_undisturbed
+    mode: nominal
+    disturbance_scale: 0
+  - name: fast_undisturbed
+    mode: fast
+    disturbance_scale: 0

@@ -21,6 +21,78 @@ HAND_CLASS_PREFIX = "fr3_hand_"
 HAND_MATERIAL_PREFIX = "fr3_hand_"
 
 
+def _add_workbench(scene: ET.Element) -> None:
+    """Add a reachable, static manipulation surface to the generated scene.
+
+    The FR3 source model is floor-mounted.  A conventional 0.7--0.8 m table
+    would intersect the current home pose, so v1 uses a 0.4 m research bench
+    in front of the base.  The named top geom and workspace site are stable
+    anchors for experiment-specific objects and success checks.
+    """
+    asset = scene.find("asset")
+    worldbody = scene.find("worldbody")
+    if asset is None or worldbody is None:
+        raise RuntimeError("scene must define asset and worldbody before the workbench")
+
+    ET.SubElement(
+        asset,
+        "material",
+        {
+            "name": "workbench_surface",
+            "rgba": "0.42 0.30 0.20 1",
+            "reflectance": "0.05",
+        },
+    )
+    ET.SubElement(
+        asset,
+        "material",
+        {"name": "workbench_frame", "rgba": "0.16 0.18 0.20 1"},
+    )
+
+    bench = ET.SubElement(worldbody, "body", {"name": "workbench", "pos": "0 0 0"})
+    ET.SubElement(
+        bench,
+        "geom",
+        {
+            "name": "workbench_top",
+            "type": "box",
+            "pos": "0.60 0 0.375",
+            "size": "0.45 0.45 0.025",
+            "material": "workbench_surface",
+            "friction": "1.0 0.005 0.0001",
+        },
+    )
+    for name, x, y in (
+        ("front_left", "0.25", "0.38"),
+        ("front_right", "0.25", "-0.38"),
+        ("rear_left", "0.95", "0.38"),
+        ("rear_right", "0.95", "-0.38"),
+    ):
+        ET.SubElement(
+            bench,
+            "geom",
+            {
+                "name": f"workbench_leg_{name}",
+                "type": "box",
+                "pos": f"{x} {y} 0.175",
+                "size": "0.035 0.035 0.175",
+                "material": "workbench_frame",
+                "friction": "0.8 0.005 0.0001",
+            },
+        )
+    ET.SubElement(
+        bench,
+        "site",
+        {
+            "name": "task_workspace_center",
+            "type": "sphere",
+            "pos": "0.60 0 0.405",
+            "size": "0.008",
+            "rgba": "0.1 0.8 0.2 0.65",
+        },
+    )
+
+
 def _copy_assets(sources: list[tuple[Path, set[str]]], destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
     for source, needed in sources:
@@ -100,6 +172,43 @@ def _find_body(root: ET.Element, name: str) -> ET.Element:
     raise RuntimeError(f"could not find body {name!r}")
 
 
+def _add_fingertip_touch_sensors(arm: ET.Element, hand: ET.Element) -> None:
+    """Add privileged contact-force proxies, not a hardware tactile model.
+
+    The sites cover the five collision boxes that approximate each fingertip
+    pad. MuJoCo touch sensors report the summed normal contact force whose
+    contact point lies inside the corresponding site volume. They do not model
+    tactile images, shear fields, deformation, electronics, noise, or latency.
+    """
+    for side, color in (("left", "0.2 0.8 1 0.25"), ("right", "1 0.4 0.2 0.25")):
+        finger = _find_body(hand, f"fr3_{side}_finger")
+        ET.SubElement(
+            finger,
+            "site",
+            {
+                "name": f"fr3_{side}_fingertip_touch_site",
+                "type": "box",
+                "pos": "0 0.005 0.0445",
+                "size": "0.010 0.006 0.016",
+                "rgba": color,
+                "group": "4",
+            },
+        )
+
+    sensors = arm.find("sensor")
+    if sensors is None:
+        sensors = ET.SubElement(arm, "sensor")
+    for side in ("left", "right"):
+        ET.SubElement(
+            sensors,
+            "touch",
+            {
+                "name": f"fr3_{side}_fingertip_normal_force",
+                "site": f"fr3_{side}_fingertip_touch_site",
+            },
+        )
+
+
 def _read_fr3_joint_limits(path: Path) -> dict[str, tuple[float, float]]:
     """Read the small, stable `robots/fr3/joint_limits.yaml` subset.
 
@@ -149,6 +258,7 @@ def build(
     arm = arm_xml.getroot()
     hand = hand_xml.getroot()
     _prefix_hand_references(hand)
+    _add_fingertip_touch_sensors(arm, hand)
 
     output_root.mkdir(parents=True, exist_ok=True)
     arm_meshes = {
@@ -209,8 +319,10 @@ def build(
             "camera",
             {
                 "name": "wrist",
-                "pos": "0.06 0 0.035",
-                "xyaxes": "0 1 0 0 0 1",
+                # Look along the fingers into the workspace, from outside the
+                # palm. The old -X view looked directly into the hand housing.
+                "pos": "0.10 0 0.035",
+                "xyaxes": "0 1 0 0.70710678 0 0.70710678",
                 "fovy": "42.5",
                 "resolution": "640 480",
             },
@@ -269,6 +381,7 @@ def build(
     worldbody = ET.SubElement(scene, "worldbody")
     ET.SubElement(worldbody, "light", {"pos": "0 0 1.5", "dir": "0 0 -1", "directional": "true"})
     ET.SubElement(worldbody, "geom", {"name": "floor", "size": "0 0 0.05", "type": "plane", "material": "groundplane"})
+    _add_workbench(scene)
     ET.SubElement(worldbody, "camera", {"name": "external", "pos": "1.2 -1.2 0.9", "xyaxes": "0.707 0.707 0 -0.25 0.25 0.935", "fovy": "42.5", "resolution": "640 480"})
     ET.indent(scene, space="  ")
     scene_path = output_root / "scene.xml"

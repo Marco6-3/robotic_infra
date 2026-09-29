@@ -7,6 +7,8 @@ log/
 __pycache__/
 *.egg-info/
 datasets/
+runs/
+MUJOCO_LOG.TXT
 third_party/
 src/mujoco_ros2_control/
 generated/

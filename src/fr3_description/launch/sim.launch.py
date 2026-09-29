@@ -19,6 +19,7 @@ def generate_launch_description():
                 ),
             ),
             DeclareLaunchArgument("target_interpolation", default_value="linear"),
+            DeclareLaunchArgument("headless", default_value="false"),
             DeclareLaunchArgument("start_policy_bridge", default_value="true"),
             LogInfo(msg=["Target interpolation: ", LaunchConfiguration("target_interpolation")]),
             Node(
@@ -48,6 +49,7 @@ def generate_launch_description():
                                 ),
                                 " mujoco_model:=",
                                 LaunchConfiguration("mujoco_model"),
+                                " headless:=", LaunchConfiguration("headless"),
                             ]
                         ), value_type=str),
                         "use_sim_time": True,
@@ -69,6 +71,7 @@ def generate_launch_description():
                                 ),
                                 " mujoco_model:=",
                                 LaunchConfiguration("mujoco_model"),
+                                " headless:=", LaunchConfiguration("headless"),
                             ]
                         ), value_type=str)
                     },

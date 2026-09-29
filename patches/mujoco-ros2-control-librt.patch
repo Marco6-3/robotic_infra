@@ -1,0 +1,21 @@
+diff --git a/mujoco_ros2_control_plugins/CMakeLists.txt b/mujoco_ros2_control_plugins/CMakeLists.txt
+index 46c0334..e9b0fdd 100644
+--- a/mujoco_ros2_control_plugins/CMakeLists.txt
++++ b/mujoco_ros2_control_plugins/CMakeLists.txt
+@@ -69,6 +69,7 @@ target_link_libraries(mujoco_ros2_control_plugins_impl PUBLIC
+   glfw
+   OpenGL::EGL
+   OpenGL::OpenGL
++  $<$<PLATFORM_ID:Linux>:rt>
+ )
+ target_compile_definitions(mujoco_ros2_control_plugins_impl PRIVATE
+   REALTIME_TOOLS_VERSION_MAJOR=${realtime_tools_VERSION_MAJOR}
+@@ -207,7 +208,7 @@ endif()
+ 
+ # DDS fan-out runs in a standalone process; this executable does not link MuJoCo.
+ add_executable(mujoco_image_bridge src/image_bridge_node.cpp)
+-target_link_libraries(mujoco_image_bridge PRIVATE rclcpp::rclcpp ${sensor_msgs_TARGETS})
++target_link_libraries(mujoco_image_bridge PRIVATE rclcpp::rclcpp ${sensor_msgs_TARGETS} $<$<PLATFORM_ID:Linux>:rt>)
+ install(TARGETS mujoco_image_bridge DESTINATION lib/${PROJECT_NAME})
+ 
+ # Install include directory

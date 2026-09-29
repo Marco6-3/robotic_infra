@@ -1,0 +1,31 @@
+experiment:
+  id: i001_stage0_temporal_context
+  idea: I001
+  duration_s: 2.0
+  seed: 7
+
+rates:
+  controller_hz: 1000
+  tactile_sensor_hz: 200
+  fast_policy_hz: 100
+  semantic_policy_hz: 5
+
+scene:
+  required_names: [workbench_top, task_workspace_center]
+
+history:
+  short_context_ms: [20, 50, 100, 200]
+  long_context_s: [0.5, 1.0, 2.0]
+
+ablations:
+  - instantaneous_tactile
+  - tactile_history
+  - tactile_action_history
+  - tactile_action_proprioception_history
+  - reset_long_context
+
+stage0_gates:
+  - all inputs use source timestamps
+  - policy input contains no future sample
+  - sensor policy and controller rates are reported separately
+  - no adaptation claim is made without a reset-context comparison

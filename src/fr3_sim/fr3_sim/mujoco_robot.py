@@ -9,7 +9,7 @@ import numpy as np
 from fr3_control.bridge import PolicyTargetBridge
 from fr3_robot_api.gripper import GripperMapper
 from fr3_robot_api.robot import Robot
-from fr3_robot_api.types import Action, CameraFrame, Observation, Pose
+from fr3_robot_api.types import Action, CameraFrame, Observation, Pose, TactileFrame
 
 
 class MujocoUnavailable(RuntimeError):
@@ -46,6 +46,10 @@ class MujocoRobot(Robot):
         self._tcp_site = self._id(mujoco.mjtObj.mjOBJ_SITE, "fr3_hand_tcp")
         self._external_camera = self._id(mujoco.mjtObj.mjOBJ_CAMERA, "external")
         self._wrist_camera = self._id(mujoco.mjtObj.mjOBJ_CAMERA, "wrist")
+        self._tactile_sensors = [
+            self._id(mujoco.mjtObj.mjOBJ_SENSOR, f"fr3_{side}_fingertip_normal_force")
+            for side in ("left", "right")
+        ]
         self._renderer = None
         self._camera_width = camera_width
         self._camera_height = camera_height
@@ -104,6 +108,21 @@ class MujocoRobot(Robot):
         self._mujoco.mju_mat2Quat(quaternion_wxyz, matrix.reshape(-1))
         return Pose(position, [quaternion_wxyz[1], quaternion_wxyz[2], quaternion_wxyz[3], quaternion_wxyz[0]])
 
+    def get_tactile_observation(self) -> TactileFrame:
+        """Return fingertip normal forces without rendering either RGB camera."""
+        self._mujoco.mj_forward(self.model, self.data)
+        timestamp_ns = int(round(float(self.data.time) * 1_000_000_000))
+        values = np.array(
+            [self.data.sensordata[self.model.sensor_adr[sensor]] for sensor in self._tactile_sensors]
+        )
+        return TactileFrame(
+            timestamp_ns=timestamp_ns,
+            values=values,
+            channel_names=("left_normal_force_n", "right_normal_force_n"),
+            source_name="mujoco_fingertip_contact_force_proxy",
+            metadata={"privileged": True, "proxy": True, "sensor_rate_hz": 200},
+        )
+
     def get_observation(self) -> Observation:
         # mj_step integrates qpos/qvel after computing derived geometry. Refresh
         # kinematics so the TCP and cameras correspond to the stamped state.
@@ -125,4 +144,5 @@ class MujocoRobot(Robot):
             gripper_width_normalized=self._mapper.normalized_from_width(width),
             external_rgb=external,
             wrist_rgb=wrist,
+            tactile=self.get_tactile_observation(),
         )

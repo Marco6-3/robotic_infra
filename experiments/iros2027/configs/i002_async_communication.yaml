@@ -1,0 +1,76 @@
+experiment:
+  id: i002_stage0_async_communication
+  idea: I002
+  duration_s: 2.0
+  seed: 7
+
+rates:
+  controller_hz: 1000
+  tactile_sensor_hz: 60
+  fast_policy_hz: 60
+  semantic_policy_hz: 5
+
+scene:
+  required_names: [workbench_top, task_workspace_center]
+
+tactile:
+  approach: dual_vision_based_tactile
+  reference_sensor: DIGIT
+  placement: parallel_jaw_inner_fingertips
+  sensor_names: [left_digit, right_digit]
+  raw_encoding: rgb8
+  raw_resolution: [480, 640, 3]
+  acquisition_hz: 60
+  storage: video_with_source_timestamps
+  policy_input:
+    representation: raw_or_learned_rgb_features
+    resize: [120, 160]
+    background_reference: per_sensor_per_session
+  simulation:
+    image_backend: not_implemented
+    reference_renderer: TACTO
+    native_physics_integration: PyBullet
+  privileged_labels:
+    backend: mujoco_fingertip_contact_force_proxy
+    channels: [left_normal_force_n, right_normal_force_n]
+    policy_input: false
+
+communication:
+  token_counts: [0, 1, 4, 16, 64]
+  semantic_staleness_ms: [0, 50, 100, 200, 500]
+  directions: [semantic_to_tactile, bidirectional]
+  schedules: [fixed_rate, contact_triggered]
+
+# Deterministic infrastructure smoke. These values exercise delayed reuse,
+# jitter, random loss and the tactile -> semantic return path; they are not a
+# selected research method or a performance-optimal configuration.
+smoke:
+  duration_s: 2.0
+  token_count: 4
+  max_staleness_ms: 250
+  contact_event_hz: 20
+  bidirectional: true
+  channel:
+    latency_ms: 20
+    jitter_ms: 5
+    drop_probability: 0.05
+    max_queue: 64
+  feedback_channel:
+    latency_ms: 10
+    jitter_ms: 2
+    drop_probability: 0.02
+    max_queue: 64
+
+baselines:
+  - slow_semantic_only
+  - fast_tactile_only
+  - synchronous_multimodal
+  - async_coarse_action
+  - async_compressed_tokens
+  - async_full_latent
+
+stage0_gates:
+  - semantic updates are consumed only after their source timestamp
+  - token age is recorded at every fast-policy decision
+  - communication bytes and calls are counted
+  - asynchronous execution is not claimed better before matched-compute evaluation
