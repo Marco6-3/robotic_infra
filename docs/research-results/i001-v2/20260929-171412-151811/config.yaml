@@ -1,0 +1,60 @@
+version: i001-v2-1
+# These values are frozen before formal generation. Not hardware specifications.
+seed: 829301
+seed_starts: {development: 800000, train: 810000, validation: 820000, test: 830000}
+max_episodes: 20000
+episodes_per_seed: 20
+train_seed_count: 120
+validation_seed_count: 40
+test_seed_count: 840
+batch_seeds: 20
+minimum_train_seeds: 120
+minimum_validation_seeds: 40
+minimum_test_seeds: 100
+target_pairs: 1000
+target_pair_seeds: 100
+workers: 6
+mass_kg: [0.063, 0.067]
+friction: [0.45, 0.80]
+fixed_friction: 0.54
+fixed_fraction: 0.5
+initial_offset_m: 0.0003
+solver_scale: [0.9, 1.1]
+nominal_width_m: 0.032
+probe_amplitude_m: [0.0005, 0.0015]
+probe_start_before_anchor_ms: [170, 275]
+probe_duration_ms: [40, 100]
+past_external_load_n: [0.0, 0.3]
+anchor_tick: 2600
+future_ms: 100
+future_load_n: 1.5
+future_ramp_ms: 20
+history_ms: 300
+sample_ms: 5
+max_anchor_displacement_m: 0.015
+max_anchor_speed_m_s: 0.003
+tactile:
+  grid: 4
+  extent_x_m: 0.015
+  extent_z_m: 0.020
+  splat_sigma_m: 0.006
+observation:
+  tactile_quantum_m: 0.000005
+  tactile_noise_std_m: 0.000001
+  arm_q_quantum_rad: 0.00001
+  finger_q_quantum_m: 0.00001
+  arm_dq_quantum_rad_s: 0.001
+  finger_dq_quantum_m_s: 0.0001
+  action_arm_quantum_rad: 0.00001
+  action_width_quantum_m: 0.00001
+  matching_linf: 1.0
+  matching_rms: 0.5
+models:
+  family: nystrom_rbf_ridge
+  landmarks: 192
+  lengths: [0.5, 1.0, 2.0]
+  penalties: [0.01, 0.1, 1.0]
+  random_seed: 73513
+bootstrap_samples: 2000
+bootstrap_seed: 31317
+# Evaluation stops at target or cap. No model retraining after first test access.

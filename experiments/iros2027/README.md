@@ -32,7 +32,7 @@ pixi run i002-smoke
 
 1. 基于下方已实现的接触代理任务补充未见物体与扰动测试集；
 2. 保留 MuJoCo contact force 作为 privileged label，并实现双指视觉触觉 MuJoCo renderer adapter；
-3. 用独立高频记录和因果历史加载器开展 I001 离线预测及闭环消融；
+3. 在 I001 已完成的受控离线预测上，检验本体精度、动作条件化和闭环收益；
 4. 为 I002 加入匹配计算预算的同步/异步 baseline，再开始共享 token 实验。
 
 I002 的完整分阶段步骤、baseline、指标和停止条件见
@@ -43,4 +43,16 @@ I002 的完整分阶段步骤、baseline、指标和停止条件见
 新增独立的 [接触代理实验](contact/README.md)：`pixi run contact-foundation`。
 已连接 known-pose 抓取/抬升、随机质量/摩擦/扰动、200 Hz 力代理、独立原始记录、
 100 Hz 规则残差和 5 Hz 慢意图通道，提供 I001 的因果历史加载器。
-该入口不替代 I002 的 DIGIT RGB 配置；视觉触觉渲染和学习实验仍待实现。
+该入口不替代 I002 的 DIGIT RGB 配置；视觉触觉渲染和学习闭环控制仍待实现。
+
+## I001 第一层受控证据
+
+[i001/README.md](i001/README.md) 提供 `i001-collect` / `i001-evaluate` 入口，
+以同未来输入的摩擦干预检验当前观测歧义与历史预测信息。
+456 个物理 episode 的结果见 [i001/RESULTS.md](i001/RESULTS.md)：
+带噪声单帧力代理存在近似混叠，历史预测有增益；当前高精度 q/dq 基线很强，
+尚不能声称完整观测下历史必不可少或 ContactBelief 架构得到验证。
+
+后续 [I001-v2](i001_v2/README.md) 已完成受控机制实验，
+[ContactBelief-v0](contactbelief/README.md) 已完成独立冻结测试并得到 NO-GO。
+正式报告、指标、配对和结论边界见 [结果索引](../../docs/research-results/README.md)。

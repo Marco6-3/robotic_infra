@@ -1,0 +1,53 @@
+[
+  {
+    "regime": "finite",
+    "seed": "830061",
+    "a": "test-830061-03.npz",
+    "b": "test-830061-07.npz",
+    "linf": "1.0000000000000002",
+    "rms": "0.1856953381770519",
+    "history_distance": "3.97604175606558",
+    "label_a": "1",
+    "label_b": "0",
+    "opposite": "True",
+    "friction_a": "0.54",
+    "friction_b": "0.54",
+    "fixed": "True",
+    "object_position_difference": "0.0002779944507524951",
+    "future_hash": "20f11a417c10f38dbbb8e2dc91115a272124108aaa65f9dde833721fd5c9d541"
+  },
+  {
+    "regime": "finite",
+    "seed": "830020",
+    "a": "test-830020-03.npz",
+    "b": "test-830020-09.npz",
+    "linf": "1.0000000000000002",
+    "rms": "0.22742941307366793",
+    "history_distance": "6.249321802284295",
+    "label_a": "1",
+    "label_b": "0",
+    "opposite": "True",
+    "friction_a": "0.54",
+    "friction_b": "0.54",
+    "fixed": "True",
+    "object_position_difference": "0.00026693022438939944",
+    "future_hash": "20f11a417c10f38dbbb8e2dc91115a272124108aaa65f9dde833721fd5c9d541"
+  },
+  {
+    "regime": "finite",
+    "seed": "830006",
+    "a": "test-830006-07.npz",
+    "b": "test-830006-08.npz",
+    "linf": "1.0",
+    "rms": "0.227429413073671",
+    "history_distance": "8.15878695626385",
+    "label_a": "0",
+    "label_b": "1",
+    "opposite": "True",
+    "friction_a": "0.54",
+    "friction_b": "0.54",
+    "fixed": "True",
+    "object_position_difference": "4.092588578838111e-05",
+    "future_hash": "20f11a417c10f38dbbb8e2dc91115a272124108aaa65f9dde833721fd5c9d541"
+  }
+]

@@ -1,0 +1,153 @@
+{
+  "scope": "post-hoc read-only; not used for gates, selection or model updates",
+  "metrics": {
+    "finite": {
+      "all_prefixes/25ms/tactile": {
+        "contactbelief_normalized_mse": 0.2925052845478058,
+        "persistence_normalized_mse": 0.38880226294199627
+      },
+      "all_prefixes/25ms/q": {
+        "contactbelief_normalized_mse": 0.08979503184556961,
+        "persistence_normalized_mse": 0.2690100340048472
+      },
+      "all_prefixes/25ms/dq": {
+        "contactbelief_normalized_mse": 0.06369446665048599,
+        "persistence_normalized_mse": 0.18977612694104512
+      },
+      "all_prefixes/50ms/tactile": {
+        "contactbelief_normalized_mse": 0.343572727839152,
+        "persistence_normalized_mse": 0.7038024393717448
+      },
+      "all_prefixes/50ms/q": {
+        "contactbelief_normalized_mse": 0.0936834129691124,
+        "persistence_normalized_mse": 0.7617255194981893
+      },
+      "all_prefixes/50ms/dq": {
+        "contactbelief_normalized_mse": 0.1440531422694524,
+        "persistence_normalized_mse": 0.57058198372523
+      },
+      "all_prefixes/100ms/tactile": {
+        "contactbelief_normalized_mse": 0.6798005946477255,
+        "persistence_normalized_mse": 1.507243226369222
+      },
+      "all_prefixes/100ms/q": {
+        "contactbelief_normalized_mse": 0.2620471793413162,
+        "persistence_normalized_mse": 1.9757552067438762
+      },
+      "all_prefixes/100ms/dq": {
+        "contactbelief_normalized_mse": 0.5705435983339946,
+        "persistence_normalized_mse": 1.6279409074783324
+      },
+      "anchor/25ms/tactile": {
+        "contactbelief_normalized_mse": 0.3204155969619751,
+        "persistence_normalized_mse": 0.3394963018099467
+      },
+      "anchor/25ms/q": {
+        "contactbelief_normalized_mse": 0.09847594151894251,
+        "persistence_normalized_mse": 0.11177593926588694
+      },
+      "anchor/25ms/dq": {
+        "contactbelief_normalized_mse": 1.024831661383311,
+        "persistence_normalized_mse": 1.0228129275639852
+      },
+      "anchor/50ms/tactile": {
+        "contactbelief_normalized_mse": 1.2161148293813069,
+        "persistence_normalized_mse": 1.4909838358561198
+      },
+      "anchor/50ms/q": {
+        "contactbelief_normalized_mse": 0.4223233540852865,
+        "persistence_normalized_mse": 0.6372114594777425
+      },
+      "anchor/50ms/dq": {
+        "contactbelief_normalized_mse": 1.8629800415039062,
+        "persistence_normalized_mse": 1.866349271138509
+      },
+      "anchor/100ms/tactile": {
+        "contactbelief_normalized_mse": 5.181179504394532,
+        "persistence_normalized_mse": 5.119109954833984
+      },
+      "anchor/100ms/q": {
+        "contactbelief_normalized_mse": 2.173113438288371,
+        "persistence_normalized_mse": 2.392993507385254
+      },
+      "anchor/100ms/dq": {
+        "contactbelief_normalized_mse": 4.059472859700521,
+        "persistence_normalized_mse": 4.041320203145345
+      }
+    },
+    "exact": {
+      "all_prefixes/25ms/tactile": {
+        "contactbelief_normalized_mse": 0.14188700596491496,
+        "persistence_normalized_mse": 0.24154494404792787
+      },
+      "all_prefixes/25ms/q": {
+        "contactbelief_normalized_mse": 0.08123845060666403,
+        "persistence_normalized_mse": 0.24050217390060424
+      },
+      "all_prefixes/25ms/dq": {
+        "contactbelief_normalized_mse": 0.06967883030573527,
+        "persistence_normalized_mse": 0.17205433845520018
+      },
+      "all_prefixes/50ms/tactile": {
+        "contactbelief_normalized_mse": 0.19135964870452882,
+        "persistence_normalized_mse": 0.5850582639376323
+      },
+      "all_prefixes/50ms/q": {
+        "contactbelief_normalized_mse": 0.06678005496660869,
+        "persistence_normalized_mse": 0.7210487588246663
+      },
+      "all_prefixes/50ms/dq": {
+        "contactbelief_normalized_mse": 0.13753157913684844,
+        "persistence_normalized_mse": 0.5607575869560242
+      },
+      "all_prefixes/100ms/tactile": {
+        "contactbelief_normalized_mse": 0.5826287086804708,
+        "persistence_normalized_mse": 1.4787275727589926
+      },
+      "all_prefixes/100ms/q": {
+        "contactbelief_normalized_mse": 0.24970810055732728,
+        "persistence_normalized_mse": 1.92358686765035
+      },
+      "all_prefixes/100ms/dq": {
+        "contactbelief_normalized_mse": 0.5859076865514119,
+        "persistence_normalized_mse": 1.6218943134943644
+      },
+      "anchor/25ms/tactile": {
+        "contactbelief_normalized_mse": 0.10800575991471609,
+        "persistence_normalized_mse": 0.1329627259572347
+      },
+      "anchor/25ms/q": {
+        "contactbelief_normalized_mse": 0.037668296471238136,
+        "persistence_normalized_mse": 0.05740905185540517
+      },
+      "anchor/25ms/dq": {
+        "contactbelief_normalized_mse": 1.0332670744260153,
+        "persistence_normalized_mse": 1.0710859648386637
+      },
+      "anchor/50ms/tactile": {
+        "contactbelief_normalized_mse": 1.1787958431243897,
+        "persistence_normalized_mse": 1.4335735257466633
+      },
+      "anchor/50ms/q": {
+        "contactbelief_normalized_mse": 0.43482375303904214,
+        "persistence_normalized_mse": 0.6310572091738383
+      },
+      "anchor/50ms/dq": {
+        "contactbelief_normalized_mse": 1.8822130680084228,
+        "persistence_normalized_mse": 1.9278909953435261
+      },
+      "anchor/100ms/tactile": {
+        "contactbelief_normalized_mse": 5.570071105957031,
+        "persistence_normalized_mse": 5.454270865122477
+      },
+      "anchor/100ms/q": {
+        "contactbelief_normalized_mse": 2.159703464508057,
+        "persistence_normalized_mse": 2.3754407151540122
+      },
+      "anchor/100ms/dq": {
+        "contactbelief_normalized_mse": 4.055832640329997,
+        "persistence_normalized_mse": 4.058677371342977
+      }
+    }
+  }
+}

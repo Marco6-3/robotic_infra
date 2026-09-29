@@ -1,0 +1,34 @@
+{
+  "fixed": {
+    "episodes": 1200,
+    "positive": 333,
+    "negative": 867,
+    "negative_with_final_speed_over_threshold": 79,
+    "positive_first_threshold_crossing_last_10ms": 110
+  },
+  "varied": {
+    "episodes": 1200,
+    "positive": 302,
+    "negative": 898,
+    "negative_with_final_speed_over_threshold": 2,
+    "positive_first_threshold_crossing_last_10ms": 0
+  },
+  "probe_variation": {
+    "tighten": 1175,
+    "loosen": 1225,
+    "start_tick_range": [
+      2325,
+      2430
+    ],
+    "duration_range": [
+      40,
+      100
+    ],
+    "amplitude_range": [
+      0.0005004480597910642,
+      0.0014998976791151704
+    ],
+    "min_action_change": 7.644145392086965e-05
+  },
+  "boundary_note": "The target is slip confirmed within 100 ms. Negative episodes may exceed the speed threshold too late to satisfy five consecutive milliseconds. This is a finite-horizon label, not never-slip safety."
+}

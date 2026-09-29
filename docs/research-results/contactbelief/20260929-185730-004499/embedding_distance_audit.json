@@ -1,0 +1,17 @@
+{
+  "train_near_constant_dimensions": 11,
+  "total_dimensions": 192,
+  "pair_distances": {
+    "True": {
+      "mean": 0.72759174138479,
+      "median": 0.6710529635359942,
+      "maximum": 4.554427348491512
+    },
+    "False": {
+      "mean": 5.558336638890973,
+      "median": 0.6537142463275811,
+      "maximum": 12393.374040069273
+    }
+  },
+  "note": "Posthoc diagnostic only. Near-constant train embedding dimensions can destabilize standardized Euclidean distances; do not use these distances as semantic-state evidence."
+}

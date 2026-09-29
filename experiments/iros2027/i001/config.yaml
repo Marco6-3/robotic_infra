@@ -1,0 +1,27 @@
+# 协议在独立测试种子运行前冻结；开发只使用 seed=10。
+train_seeds: [100, 132]  # 左闭右开
+validation_seeds: [200, 212]
+test_seeds: [300, 332]
+friction_bins: [[0.45, 0.53], [0.54, 0.62], [0.63, 0.75]]
+mass_range_kg: [0.055, 0.075]
+width_range_m: [0.0315, 0.0325]
+probe_range_n: [1.8, 2.2]
+probe_start_tick: 2400
+probe_duration_ticks: 10
+anchor_tick: 2650
+horizon_ticks: 50
+future_load_n: 1.5
+future_ramp_ticks: 20
+sensor_period_ticks: 5
+noise_std_n: 0.01
+history_ms: [0, 20, 50, 100, 200, 250]
+# 预定义的有限分辨率近邻证据，不能视为数学上的完全不可观测。
+alias_force_max_n: 0.03
+alias_arm_position_max_rad: 0.001
+alias_finger_position_max_m: 0.0001
+alias_arm_velocity_max_rad_s: 0.01
+alias_finger_velocity_max_m_s: 0.001
+kernel_lengths: [0.25, 0.5, 1.0, 2.0, 4.0]
+ridge_penalties: [0.001, 0.01, 0.1, 1.0]
+bootstrap_samples: 2000
+bootstrap_seed: 9182

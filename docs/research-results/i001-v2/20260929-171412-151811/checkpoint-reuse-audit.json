@@ -1,0 +1,5 @@
+{
+  "episode_checkpoint_reuse_preserves_mtime_and_hash": true,
+  "episode": "runs/i001-v2/20260929-171412-151811/episodes/train/train-810000-00.npz",
+  "sha256": "ac71dca25c4d64b4b7e715957924102791e4b344ca8705f7e66de1a387c4e21d"
+}

@@ -1,0 +1,2 @@
+# Preserve exported scientific CSV bytes, including the writer's CRLF endings.
+docs/research-results/**/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

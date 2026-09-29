@@ -1,0 +1,14 @@
+{
+  "episodes": 2400,
+  "eligible": 2400,
+  "seeds": 120,
+  "positive": 804,
+  "negative": 1596,
+  "matched_pairs": 8085,
+  "qualified_pairs": 2754,
+  "qualified_seed_coverage": 112,
+  "fixed_friction_qualified_pairs": 1504,
+  "identical_future_inputs_per_seed": true,
+  "deterministic_replay": true,
+  "frozen_before_seeds": true
+}

@@ -1,0 +1,6 @@
+This replays the recorded physics seeds and frozen weights, rather than drawing a new test sample. Use a NEW destination. Original artifacts are untouched. Requires the original frozen source/environment.
+
+cd /home/mingzhe/Documents/ws/robotic_infra
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 env -u PYTHONPATH -u PYTHONHOME PYTHONNOUSERSITE=1 .venv-recording/bin/python /home/mingzhe/Documents/ws/robotic_infra/runs/contactbelief/20260929-185730-004499/replay_frozen_final.py /home/mingzhe/Documents/ws/robotic_infra/runs/contactbelief/replay-original-final
+
+The ordinary REPRODUCE.txt command starts a fresh experiment and intentionally draws new FINAL seeds after fitting/freezing. The resume command preserves the existing run.

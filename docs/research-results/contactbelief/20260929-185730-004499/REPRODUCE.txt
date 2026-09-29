@@ -1,0 +1,5 @@
+cd /home/mingzhe/Documents/ws/robotic_infra
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 env -u PYTHONPATH -u PYTHONHOME PYTHONNOUSERSITE=1 .venv-recording/bin/python -m experiments.iros2027.contactbelief.run --config /home/mingzhe/Documents/ws/robotic_infra/runs/contactbelief/20260929-185730-004499/config.yaml
+
+Resume:
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 env -u PYTHONPATH -u PYTHONHOME PYTHONNOUSERSITE=1 .venv-recording/bin/python -m experiments.iros2027.contactbelief.run --resume /home/mingzhe/Documents/ws/robotic_infra/runs/contactbelief/20260929-185730-004499

@@ -1,0 +1,10 @@
+{
+  "overall_status": "partially supported",
+  "finite_resolution_h1": "supported under the preregistered model and task",
+  "action_conditioning": "not established",
+  "simulator_exact": "B1 significantly better than B4",
+  "fixed_friction": "positive finite-resolution primary and pair discrimination gains",
+  "stop_reason": "preregistered pair count/seed coverage achieved; no further tuning",
+  "new_fit_or_threshold_changes": false,
+  "review_notes": "Report interpretation revised; all predictions, metrics, model hashes and bootstrap numbers preserved."
+}

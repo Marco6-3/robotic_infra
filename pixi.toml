@@ -51,6 +51,9 @@ libegl-devel = ">=1.7.0,<2"
 mujoco = "==3.10.0"
 
 [tasks]
+i001-v2 = "python -m experiments.iros2027.i001_v2.run"
+i001-collect = "python -m experiments.iros2027.i001.collect"
+i001-evaluate = "python -m experiments.iros2027.i001.evaluate"
 contact-play = "env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia python -m experiments.iros2027.contact.play"
 contact-eval = "python -m experiments.iros2027.contact.run"
 contact-report = "python -m experiments.iros2027.contact.report"

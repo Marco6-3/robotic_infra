@@ -1,0 +1,23 @@
+{
+  "candidate": "finite-B2-lr0.001-lam0-s1701",
+  "method": "B2",
+  "regime": "finite",
+  "lr": 0.001,
+  "lambda_future": 0.0,
+  "seed": 1701,
+  "validation_brier": 0.11388502269983292,
+  "best_epoch": 59,
+  "trained_epochs": 60,
+  "optimizer_steps": 600,
+  "parameters": {
+    "allocated_parameters": 35123,
+    "outcome_inference_parameters": 30849,
+    "parameters_receiving_training_gradients": 30849,
+    "auxiliary_head_parameters": 4274,
+    "channels": 58,
+    "history_ms": 300,
+    "samples": 61
+  },
+  "seconds_this_attempt": 1.5475452930004394,
+  "checkpoint_sha256": "fa416a01ea1eb4a318c9517628a0d372127e0ecc537b05db5677fee9b3e276bc"
+}

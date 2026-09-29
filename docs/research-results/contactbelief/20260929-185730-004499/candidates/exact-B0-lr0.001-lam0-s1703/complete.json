@@ -1,0 +1,23 @@
+{
+  "candidate": "exact-B0-lr0.001-lam0-s1703",
+  "method": "B0",
+  "regime": "exact",
+  "lr": 0.001,
+  "lambda_future": 0.0,
+  "seed": 1703,
+  "validation_brier": 0.136479452252388,
+  "best_epoch": 42,
+  "trained_epochs": 60,
+  "optimizer_steps": 600,
+  "parameters": {
+    "allocated_parameters": 10049,
+    "outcome_inference_parameters": 10049,
+    "parameters_receiving_training_gradients": 10049,
+    "auxiliary_head_parameters": 0,
+    "channels": 58,
+    "history_ms": 0,
+    "samples": 1
+  },
+  "seconds_this_attempt": 1.05120007000005,
+  "checkpoint_sha256": "aa96aeef3d08fccb213096206075de8737872bd6f79a83c73b89e75d72db68d9"
+}

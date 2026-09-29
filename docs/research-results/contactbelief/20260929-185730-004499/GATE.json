@@ -1,0 +1,13 @@
+{
+  "go": false,
+  "gates": {
+    "gate1_predictive_objective": false,
+    "gate2_generic_temporal": false,
+    "gate3_representation": true,
+    "gate4_shortcut_checks": false,
+    "adequate_final_construction": true
+  },
+  "strongest_generic": "B1",
+  "scope": "controlled grasp, fixed anchor and 100ms outcome; offline only",
+  "action": "stop method escalation; write negative result"
+}

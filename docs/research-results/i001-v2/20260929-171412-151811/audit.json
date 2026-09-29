@@ -1,0 +1,7 @@
+{
+  "episodes": 5600,
+  "seeds": 280,
+  "future_inputs_identical": true,
+  "deterministic_replay": "test-830000-00.npz",
+  "labels_timestamps_checked": true
+}

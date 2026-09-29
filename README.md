@@ -13,6 +13,12 @@ pixi run contact-report RUN_PATH  # 用上一条输出的 Results 目录查看�
 
 在仿真窗口按空格暂停、`R` 重来、`N` 下一条件、`Q` 退出，无需另开键盘控制终端。
 详细使用方式、配置修改和参考仓库见 [实验工作流](docs/experiment_workflow.md)。
+
+I001 已新增受控观测混叠实验：`pixi run i001-collect`、`pixi run i001-evaluate RUN_PATH`。
+[实测结果与结论边界](experiments/iros2027/i001/RESULTS.md)：历史优于带噪声单帧触觉，
+但未优于当前触觉加高精度本体状态。
+后续 I001-v2 的限定机制证据与 ContactBelief-v0 的 NO-GO 方法结果，见
+[受控实验结果索引](docs/research-results/README.md)。
 `sim-nvidia` 是 ROS 基础场景入口，`keyboard_policy.py` 只用于关节命令链路测试。
 
 

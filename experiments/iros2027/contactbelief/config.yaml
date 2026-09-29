@@ -1,0 +1,29 @@
+version: contactbelief-v0-1
+source_run: runs/i001-v2/20260929-171412-151811
+regimes: [finite, exact]
+history_ms: 300
+horizons_ms: [25, 50, 100]
+methods: [B0, B1, B2, B3, B4]
+training_seeds: [1701, 1702, 1703]
+learning_rates: [0.001, 0.0003]
+lambda_future: [0.1, 1.0]
+hidden_dim: 64
+encoder_dim: 64
+stack_hidden: 64
+transformer_layers: 1
+transformer_heads: 4
+epochs: 60
+train_batch_size: 256
+eval_batch_size: 256
+num_workers: 0
+weight_decay: 0.0001
+gradient_clip: 1.0
+amp: false
+device: cuda
+cpu_threads: 2
+final_seed_count: 120
+simulation_workers: 6
+bootstrap_samples: 2000
+bootstrap_seed: 91273
+probe_ridge: 1.0
+shuffle_seed: 27613

@@ -1,0 +1,21 @@
+{
+  "time": "2026-09-29T11:13:31.361910+00:00",
+  "frozen_sources_and_selected_models_unchanged": true,
+  "all_candidate_best_checkpoints_verified": 72,
+  "final_episode_hashes_verified": 2400,
+  "original_completion_artifact_hashes_preserved": true,
+  "i001_v2_unchanged": true,
+  "regression": "68 passed in 12.36s",
+  "completed_resume_preserves_outputs": true,
+  "posthoc_only_no_new_training": true,
+  "full_final_replay_helper_provided_but_not_executed": true,
+  "additional_artifact_sha256": {
+    "COMPLETE.json": "b5f7324249913a83e059bf5940ddf79ad9bfa7547d2041c7d0168936a54f4d47",
+    "replay_frozen_final.py": "c2ccc5c88476a502bc243f2ee0e62fd70d016d0ba15cbf7c2aea252bacca7b4f",
+    "EXACT_FINAL_REPLAY.txt": "11bec53de73bba3a820f48830d8816e4711448e0577ef4526e93e90bb0f71601",
+    "launcher.log": "eeeeef45e38fcf3ac4c5dc41ef2e6fb4ca6b5b9e553fd0043ff71d5c3167cec0",
+    "REVIEW.md": "7a6b464ca65597d5951557208bf2d7786965b7f775fa39a70cd3ebcd401adfcd",
+    "auxiliary_prediction_audit.json": "3a7ac69bc46db6c35e8f3b9f0625815dc718eec8d7772153658518c8af1d3180",
+    "embedding_distance_audit.json": "1ee54cfa571137f2c62b1e25e011fff813fd7ccff802628a49f7bf9f15ced3e9"
+  }
+}

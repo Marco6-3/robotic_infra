@@ -1,0 +1,9 @@
+{
+  "device": "CUDA",
+  "simulated_crash_after_epoch": 1,
+  "completed_epochs": 2,
+  "model_bitwise_equal": true,
+  "optimizer_bitwise_equal": true,
+  "loss_and_validation_logs_equal": true,
+  "scope": "synthetic pipeline verification; not scientific evidence"
+}
