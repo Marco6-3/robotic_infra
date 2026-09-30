@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 1840000,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M1",
+    "first_action": [
+      0.18203935027122498,
+      0.301495760679245
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008448144496297296,
+    "lateral_error_m": 0.0003050402951918806,
+    "peak_force_n": 4.420622404047524,
+    "latency_s": 0.56,
+    "search_path_m": 0.003724743901647993,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840001,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M1",
+    "first_action": [
+      0.3680941164493561,
+      0.3393208086490631
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 0.00029689826111958806,
+    "lateral_error_m": 0.004926988041805868,
+    "peak_force_n": 5.987934657157895,
+    "latency_s": 1.6,
+    "search_path_m": 0.006716348486315643,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840002,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M1",
+    "first_action": [
+      -0.4972563683986664,
+      0.07475598156452179
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.00839395747845016,
+    "lateral_error_m": 0.00035671085078892726,
+    "peak_force_n": 4.759666193627147,
+    "latency_s": 0.555,
+    "search_path_m": 0.00434020860341113,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840003,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M1",
+    "first_action": [
+      -0.4190448224544525,
+      0.0348951481282711
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008398801008402058,
+    "lateral_error_m": 0.00035218639262054734,
+    "peak_force_n": 3.850586174074685,
+    "latency_s": 0.285,
+    "search_path_m": 0.0032510305072285268,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "models": 9,
+  "parameters": 278466,
+  "steps": 800,
+  "datasets": {
+    "train": {
+      "episodes": 80,
+      "targets": 4382
+    },
+    "validation": {
+      "episodes": 16,
+      "targets": 889
+    }
+  },
+  "command_alignment": true,
+  "freeze_matches": true
+}

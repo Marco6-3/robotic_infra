@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 1840000,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      0.08218295872211456,
+      0.14915083348751068
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008458839120026818,
+    "lateral_error_m": 0.0002739073244341009,
+    "peak_force_n": 4.420622404047524,
+    "latency_s": 0.555,
+    "search_path_m": 0.0037569623380099212,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840001,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      0.28368639945983887,
+      0.20279791951179504
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 0.0002417101740583294,
+    "lateral_error_m": 0.005084067699617474,
+    "peak_force_n": 5.987934657157895,
+    "latency_s": 1.6,
+    "search_path_m": 0.006874704661107462,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840002,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      -0.4692835807800293,
+      0.04639207944273949
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008359994407344924,
+    "lateral_error_m": 0.0003595112010275451,
+    "peak_force_n": 4.759666193627147,
+    "latency_s": 0.57,
+    "search_path_m": 0.004422008135490048,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840003,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      -0.3596459627151489,
+      0.06626003235578537
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008364354184741138,
+    "lateral_error_m": 0.0003552344388271358,
+    "peak_force_n": 3.850586174074685,
+    "latency_s": 0.29,
+    "search_path_m": 0.0032501393065760623,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  }
+]

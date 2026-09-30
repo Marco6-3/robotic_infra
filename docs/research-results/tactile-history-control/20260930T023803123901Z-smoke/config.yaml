@@ -1,0 +1,86 @@
+version: tactile-history-control-pilot-v1
+stage: Smoke
+sample_ms: 5
+history_ms: 300
+start_ms: 2400
+end_ms: 3600
+nominal_width_m: 0.032
+max_closure_m: 0.012
+mass_kg:
+- 0.055
+- 0.075
+friction:
+- 0.45
+- 0.8
+initial_offset_m: 0.0003
+disturbance_n:
+- 1.5
+- 4.0
+onset_ms:
+- 2500
+- 2800
+duration_ms:
+- 80
+- 250
+ramp_ms: 20
+tactile:
+  grid: 4
+  extent_x_m: 0.015
+  extent_z_m: 0.02
+  splat_sigma_m: 0.006
+tactile_noise_m: 1.0e-06
+tactile_quantum_m: 5.0e-06
+arm_quantum_rad: 1.0e-05
+finger_quantum_m: 1.0e-05
+teacher:
+  base: 0.05
+  displacement_gain: 90.0
+  speed_gain: 4.0
+success:
+  max_slip_m: 0.025
+  drop_displacement_m: 0.04
+  min_height_m: 0.46
+  stable_speed_m_s: 0.005
+  min_force_n: 0.15
+  stable_ms: 100
+model:
+  hidden: 128
+  layers: 2
+  heads: 4
+  ff: 256
+  dropout: 0.0
+train_seeds:
+- 17
+train_episodes: 4
+validation_episodes: 2
+eval_episodes: 4
+seed_starts:
+  development: 1010000
+  train: 1020000
+  validation: 1030000
+  test: 1040000
+  ambiguity: 1050000
+train_steps: 3
+train_batch_size: 64
+eval_batch_size: 48
+learning_rate: 0.0003
+weight_decay: 0.0001
+gradient_clip: 1.0
+checkpoint_every: 3
+cpu_threads: 4
+workers: 4
+device: cuda
+bootstrap_samples: 4000
+bootstrap_seed: 6182
+minimum_effect: 0.05
+ambiguity:
+  seeds: 2
+  variants: 2
+  anchor_after_onset_ms: 80
+  tactile_tolerance_m: 2.5e-05
+  arm_tolerance_rad: 0.0001
+  finger_tolerance_m: 0.0001
+  rms_limit: 1.0
+  linf_limit: 3.0
+  teacher_gap: 0.15
+  min_pairs: 10

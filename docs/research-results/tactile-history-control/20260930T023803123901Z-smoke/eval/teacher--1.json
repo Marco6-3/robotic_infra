@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 1040000,
+    "variant": 0,
+    "train_seed": -1,
+    "condition": "teacher",
+    "success": 1,
+    "drop": 0,
+    "max_slip_m": 0.003303958702602678,
+    "final_slip_m": 0.003303958702602678,
+    "recovery_latency_s": 0.105,
+    "latency_censored": 0,
+    "peak_contact_force_n": 4.150169907727577,
+    "mean_correction_m": 0.0033989402919047213,
+    "initial_stable": 1
+  },
+  {
+    "seed": 1040001,
+    "variant": 0,
+    "train_seed": -1,
+    "condition": "teacher",
+    "success": 1,
+    "drop": 0,
+    "max_slip_m": 0.004779157035277921,
+    "final_slip_m": 0.004779157035277921,
+    "recovery_latency_s": 0.11,
+    "latency_censored": 0,
+    "peak_contact_force_n": 4.71673691495323,
+    "mean_correction_m": 0.004032298231684534,
+    "initial_stable": 1
+  },
+  {
+    "seed": 1040002,
+    "variant": 0,
+    "train_seed": -1,
+    "condition": "teacher",
+    "success": 1,
+    "drop": 0,
+    "max_slip_m": 0.0026041536280810647,
+    "final_slip_m": 0.0026041536280810647,
+    "recovery_latency_s": 0.1,
+    "latency_censored": 0,
+    "peak_contact_force_n": 3.9851457371354613,
+    "mean_correction_m": 0.00282129802409055,
+    "initial_stable": 1
+  },
+  {
+    "seed": 1040003,
+    "variant": 0,
+    "train_seed": -1,
+    "condition": "teacher",
+    "success": 1,
+    "drop": 0,
+    "max_slip_m": 0.0006516783846382707,
+    "final_slip_m": 0.0006516783846382707,
+    "recovery_latency_s": 0.095,
+    "latency_censored": 0,
+    "peak_contact_force_n": 2.332897577058352,
+    "mean_correction_m": 0.001007844343122153,
+    "initial_stable": 1
+  }
+]

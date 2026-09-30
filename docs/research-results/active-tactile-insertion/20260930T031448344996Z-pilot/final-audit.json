@@ -1,0 +1,16 @@
+{
+  "main_rollouts": 1104,
+  "constructed_pair_rollouts": 432,
+  "no_unsafe_successes": true,
+  "all_command_channels_aligned": true,
+  "source_data_model_hashes_match": true,
+  "matched_pairs": 0,
+  "tactile_rms_range": [
+    0.6688777804374695,
+    2.960383892059326
+  ],
+  "q_rms_range": [
+    3.2506916522979736,
+    14.51768970489502
+  ]
+}

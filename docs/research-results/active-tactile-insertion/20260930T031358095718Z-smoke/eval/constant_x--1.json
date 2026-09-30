@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 1840000,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "constant_x",
+    "first_action": [
+      1.0,
+      0.0
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 0.00024086176517266675,
+    "lateral_error_m": 0.005066750181235489,
+    "peak_force_n": 5.807380784704504,
+    "latency_s": 1.6,
+    "search_path_m": 0.008445108073196886,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840001,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "constant_x",
+    "first_action": [
+      1.0,
+      0.0
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 0.00011346706832431053,
+    "lateral_error_m": 0.0055866200366642095,
+    "peak_force_n": 5.987934657157895,
+    "latency_s": 1.6,
+    "search_path_m": 0.008732834224012994,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840002,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "constant_x",
+    "first_action": [
+      1.0,
+      0.0
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 1.0135211517929565e-05,
+    "lateral_error_m": 0.007536746580292417,
+    "peak_force_n": 5.087346832494321,
+    "latency_s": 1.6,
+    "search_path_m": 0.0076839533579691095,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840003,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "constant_x",
+    "first_action": [
+      1.0,
+      0.0
+    ],
+    "success": 0,
+    "force_failure": 1,
+    "timeout": 0,
+    "insertion_depth_m": 0.004888343299047287,
+    "lateral_error_m": 0.000656202507701092,
+    "peak_force_n": 8.038967006029623,
+    "latency_s": 1.6,
+    "search_path_m": 0.003206129788441416,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  }
+]

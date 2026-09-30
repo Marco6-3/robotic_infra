@@ -1,0 +1,26 @@
+{
+  "seed": 920068,
+  "variant": 0,
+  "mass": 0.06812401565334485,
+  "friction": 0.7357667316736733,
+  "onset": 2650,
+  "duration": 120,
+  "force": [
+    1.3693969733628282,
+    -2.4792802283957913,
+    0.0
+  ],
+  "offset": [
+    -5.2972661214309414e-05,
+    6.48311681355664e-05
+  ],
+  "success": 1,
+  "drop": 0,
+  "max_slip_m": 0.0015889097254934322,
+  "final_slip_m": 0.0015889097254934322,
+  "recovery_latency_s": 0.12,
+  "latency_censored": 0,
+  "peak_contact_force_n": 4.309742164033721,
+  "mean_correction_m": 0.0027376954833076023,
+  "initial_stable": 1
+}

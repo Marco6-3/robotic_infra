@@ -1,0 +1,10 @@
+{
+  "parameters": 279041,
+  "steps": 600,
+  "samples": 17280,
+  "seed": 43,
+  "method": "M2",
+  "seconds_this_attempt": 2.4574488100001872,
+  "sha256": "88fbbeee643bd9e72dcaa34b27987cb89139ad74ba8d8692d4969abce26d353b",
+  "final_validation_mse": 0.005787345157780995
+}

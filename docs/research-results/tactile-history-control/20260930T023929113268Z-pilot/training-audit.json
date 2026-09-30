@@ -1,0 +1,8 @@
+{
+  "equal_models": 9,
+  "parameters": 279041,
+  "steps": 600,
+  "episodes": 88,
+  "command_alignment": true,
+  "frozen_hashes_match": true
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "seed": 1850000,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      -0.44690823554992676,
+      0.1415223628282547
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008464540150000857,
+    "lateral_error_m": 0.00020094787587191288,
+    "peak_force_n": 4.928051713871561,
+    "latency_s": 0.22,
+    "search_path_m": 0.003463183603981165,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.8627376152165733,
+    "teacher_action": [
+      -1.0,
+      -0.5205997503858297
+    ]
+  },
+  {
+    "seed": 1850000,
+    "mirror": -1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      0.43340757489204407,
+      0.4126850366592407
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008372089199955964,
+    "lateral_error_m": 0.0003578734093499776,
+    "peak_force_n": 4.9280517138715485,
+    "latency_s": 0.22,
+    "search_path_m": 0.0036297961286880735,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.5767777402331864,
+    "teacher_action": [
+      1.0,
+      0.5205997503862688
+    ]
+  },
+  {
+    "seed": 1850001,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      0.2883782684803009,
+      0.21500898897647858
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 0.0009443740930711424,
+    "lateral_error_m": 0.0036865166347369743,
+    "peak_force_n": 6.578589471417649,
+    "latency_s": 1.6,
+    "search_path_m": 0.006612936039369437,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.7973178105786937,
+    "teacher_action": [
+      1.0,
+      -0.14458828895385697
+    ]
+  },
+  {
+    "seed": 1850001,
+    "mirror": -1,
+    "train_seed": 17,
+    "condition": "M2",
+    "first_action": [
+      -0.43055960536003113,
+      0.10864800214767456
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.00846778089885292,
+    "lateral_error_m": 7.526354549708128e-05,
+    "peak_force_n": 3.5436447428400575,
+    "latency_s": 0.41,
+    "search_path_m": 0.0032807706042056886,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.5705734547483217,
+    "teacher_action": [
+      -1.0,
+      0.1445882889538702
+    ]
+  }
+]

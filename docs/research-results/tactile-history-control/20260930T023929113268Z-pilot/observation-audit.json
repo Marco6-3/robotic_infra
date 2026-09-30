@@ -1,0 +1,20 @@
+{
+  "train": {
+    "observed_vectors": 21672,
+    "dimensions": 42,
+    "fraction_before_clip_outside_8": 0.0005504139640352265,
+    "action_range": [
+      0.0,
+      1.0
+    ]
+  },
+  "validation": {
+    "observed_vectors": 4816,
+    "dimensions": 42,
+    "fraction_before_clip_outside_8": 0.0004498892580287929,
+    "action_range": [
+      0.0,
+      1.0
+    ]
+  }
+}

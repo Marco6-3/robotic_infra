@@ -1,0 +1,7 @@
+{
+  "validation_r2": 0.7547548284336596,
+  "active_component_direction_accuracy": 0.8960444589735208,
+  "training_observations": 9022,
+  "validation_observations": 1817,
+  "policy_inputs_changed": false
+}

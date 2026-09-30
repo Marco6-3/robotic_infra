@@ -1,0 +1,23 @@
+{"time": 1790738040.9458663, "stage": "collect-start"}
+{"time": 1790738041.1797316, "stage": "train-start"}
+{"time": 1790738042.3648295, "stage": "train", "method": "M0", "seed": 17, "step": 1, "train_mse": 0.3473324179649353, "validation_mse": 0.4725743323257289}
+{"time": 1790738042.389024, "stage": "train", "method": "M0", "seed": 17, "step": 4, "train_mse": 0.2777150273323059, "validation_mse": 0.39097461503805575}
+{"time": 1790738042.4085135, "stage": "train", "method": "M1", "seed": 17, "step": 1, "train_mse": 0.3326902985572815, "validation_mse": 0.39890509536585855}
+{"time": 1790738042.4277976, "stage": "train", "method": "M1", "seed": 17, "step": 4, "train_mse": 0.22387948632240295, "validation_mse": 0.320891154181097}
+{"time": 1790738042.445797, "stage": "train", "method": "M2", "seed": 17, "step": 1, "train_mse": 0.32331711053848267, "validation_mse": 0.363204051538841}
+{"time": 1790738042.464132, "stage": "train", "method": "M2", "seed": 17, "step": 4, "train_mse": 0.18352052569389343, "validation_mse": 0.27809915837553356}
+{"time": 1790738042.4715154, "stage": "evaluate-start"}
+{"time": 1790738043.2916274, "stage": "evaluate", "condition": "M0", "seed": 17, "success": 0.75, "seconds": 0.8199346909996166}
+{"time": 1790738043.9811707, "stage": "evaluate", "condition": "M1", "seed": 17, "success": 0.75, "seconds": 0.6894528940001692}
+{"time": 1790738044.6415048, "stage": "evaluate", "condition": "M2", "seed": 17, "success": 0.75, "seconds": 0.6602205709996269}
+{"time": 1790738045.3573046, "stage": "evaluate", "condition": "M1_temporal_shuffle", "seed": 17, "success": 0.75, "seconds": 0.7156892960001642}
+{"time": 1790738046.0305452, "stage": "evaluate", "condition": "M2_temporal_shuffle", "seed": 17, "success": 0.75, "seconds": 0.6731475810001939}
+{"time": 1790738046.7325044, "stage": "evaluate", "condition": "M2_action_shuffle", "seed": 17, "success": 0.75, "seconds": 0.701872337000168}
+{"time": 1790738046.9527826, "stage": "evaluate", "condition": "teacher", "seed": -1, "success": 1.0, "seconds": 0.22017457899983128}
+{"time": 1790738047.4391153, "stage": "evaluate", "condition": "nominal", "seed": -1, "success": 0.25, "seconds": 0.4862059489996682}
+{"time": 1790738047.8677685, "stage": "evaluate", "condition": "constant_x", "seed": -1, "success": 0.0, "seconds": 0.4285715930000151}
+{"time": 1790738048.1802573, "stage": "evaluate", "condition": "spiral", "seed": -1, "success": 0.25, "seconds": 0.31240406399956555}
+{"time": 1790738048.3585055, "stage": "evaluate", "condition": "brute_down", "seed": -1, "success": 0.25, "seconds": 0.17815336500007106}
+{"time": 1790738048.3598526, "stage": "diagnostics-start"}
+{"time": 1790738048.5734384, "stage": "diagnostics", "constructed_pairs": 2, "full_Tq_matches": 0}
+{"time": 1790738050.7249227, "stage": "complete", "status": "NO_SIGNAL", "go_no_go": "NO-GO"}

@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 1840000,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "teacher",
+    "first_action": [
+      1.0,
+      1.0
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.0083848017273141,
+    "lateral_error_m": 1.691259689678967e-08,
+    "peak_force_n": 4.420622404047524,
+    "latency_s": 0.295,
+    "search_path_m": 0.0040055967093814435,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840001,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "teacher",
+    "first_action": [
+      1.0,
+      -1.0
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008407471727154637,
+    "lateral_error_m": 1.978503695948621e-07,
+    "peak_force_n": 5.987934657157895,
+    "latency_s": 0.31,
+    "search_path_m": 0.004518155244904939,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840002,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "teacher",
+    "first_action": [
+      -1.0,
+      -0.06875405749778894
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008378314834620542,
+    "lateral_error_m": 2.4503019277402254e-07,
+    "peak_force_n": 4.759666193627147,
+    "latency_s": 0.38,
+    "search_path_m": 0.00443741313060878,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840003,
+    "mirror": 1,
+    "train_seed": -1,
+    "condition": "teacher",
+    "first_action": [
+      -1.0,
+      0.4526870063649712
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008461042570412138,
+    "lateral_error_m": 4.5537013999935447e-07,
+    "peak_force_n": 3.850586174074685,
+    "latency_s": 0.22,
+    "search_path_m": 0.003490582704964735,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  }
+]

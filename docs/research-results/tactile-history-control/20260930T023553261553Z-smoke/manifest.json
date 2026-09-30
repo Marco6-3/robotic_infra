@@ -1,0 +1,24 @@
+{
+  "source": {
+    "experiments/tactile_history_control/ablation_runner.py": "7bf3a32f76af6aea1a3f6c6342e722bf5526b88f0ab1970840abd1de5569d300",
+    "experiments/tactile_history_control/__init__.py": "4c0fd449ed8f02b7ef8e352b96a89dc49c60ad63427fcf6880be5daa5e4f90c6",
+    "experiments/tactile_history_control/utils.py": "b8d98857aa3596f364474cec6a62639c7c4a6e3f50929e2184e8f0b8f7252015",
+    "experiments/tactile_history_control/ambiguity.py": "522d537cdd1a4f1214be75a27198204041d8b68f7a32269e1090b0ad713ae159",
+    "experiments/tactile_history_control/policy.py": "440ac420988342d3d652136bc771c789e883bb5318a28b93d83e8e90ed602ce8",
+    "experiments/tactile_history_control/development.py": "bed7614113054105fb1f808adf903d138c7782f1e3137ee40f46447946e96cc7",
+    "experiments/tactile_history_control/evaluate.py": "0f44c5639885850893cecf149a6effdffd8cd1ee68da3556945085f344243ee0",
+    "experiments/tactile_history_control/analysis.py": "7f07dbd7d68536c2f70273e36ee7d4ec35e6f8869f4141a0407ee7a608645407",
+    "experiments/tactile_history_control/environment.py": "a9f981220a98af70816d7bf2e940ede8d40af076062057403a946a763e043113",
+    "experiments/tactile_history_control/dataset.py": "a20eb813b60dbe5be11972ebd6deea4f9c4e306767a03a9b4b96bb8961369ebc",
+    "experiments/tactile_history_control/train.py": "1a67058d61445a246fcad6f88ac4bc26578a48c575641a28f92e3ea5362fa396",
+    "experiments/tactile_history_control/run.py": "2b506f8a416ed2af70ec9b8c8034012eaf72a8cede81cc2148bd78ca623b7c88",
+    "experiments/tactile_history_control/PROTOCOL.md": "493d00830e5705fea117a02104f1bf0859630a5b37255a9b5b309ec6f3f91ba9",
+    "experiments/iros2027/contact/task.py": "f6d5f89ea5d5ec21b14f53469922b41fa6d1a3bbaabf3f24d9a85d99b6e02e88",
+    "experiments/iros2027/i001_v2/physics.py": "c63b0107cacf0a58abe4b849d318d8126c740cbe6dc29b541757ea2e86570d27",
+    "src/fr3_sim/fr3_sim/contact_proxy.py": "807d3ee69638ac328d04dba4626412b8d2c7e079e6d78e2c6b1f5733e44fa041",
+    "src/fr3_description/models/fr3_hand.xml": "3115a01766a7ddd4841178123ae7da6322e52298bcdb4190e78a79c4ceb112f7",
+    "src/fr3_description/models/scene.xml": "58009a1383e4516f71937070182727e39839f338a0a18e7015e42b45b46efcad"
+  },
+  "config_sha256": "7d15cb24df49edf5c2cc33a3e15d018ffe646dbc1a48fe7dae4bf1e82f2076a3",
+  "git_commit": "05c27070c39bfc90b36f5033772a8e4b21bb5853"
+}

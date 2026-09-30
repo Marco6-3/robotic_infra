@@ -22,6 +22,16 @@ I001 已新增受控观测混叠实验：`pixi run i001-collect`、`pixi run i00
 `sim-nvidia` 是 ROS 基础场景入口，`keyboard_policy.py` 只用于关节命令链路测试。
 
 
+## 当前研究方向（2026-09-30）
+
+主线已转向 **执行时触觉反馈如何修正已规划、尚未执行的动作**：慢规划器输出action chunk，快触觉模块在执行中刷新观测；先验证fresh feedback，再检验预期接触与实际接触的偏差是否改善纠错。
+
+[研究方向与下一轮Pilot设计](docs/research/EXECUTION_TIME_TACTILE_REFINEMENT.md) 对照T-Rex、TacForcing与TacPAC，明确因果时序、强基线及停止条件。**新方向尚未实现或训练**，20/200 Hz只是候选调度设置。
+
+已完成的[active insertion Pilot](docs/research-results/active-tactile-insertion/20260930T031448344996Z-pilot/RESULTS.md) 中，history相对current为+6.94 pp，但past action相对T/q history为−2.08 pp；q历史可较好重建动作方向。保留负结果，暂停围绕action history独立收益扩展。此前[disturbed-grasp Pilot](docs/research-results/tactile-history-control/20260930T023929113268Z-pilot/RESULTS.md) 的constant-max为100%，也一并保留。
+
+两轮代码、逐episode指标、图表与审计已整理；公开范围、依赖和精确恢复限制见[发布说明](docs/research-results/PILOT_RELEASE_20260930.md)。插入实验使用Cartesian工装与几何触觉代理，不代表完整FR3或真机插入。
+
 ## 本机运行与策略验收（2026-09-26）
 
 本机环境使用项目 `.pixi`（ROS/MuJoCo）与 `.venv-recording`（LeRobot/ACT/CUDA）

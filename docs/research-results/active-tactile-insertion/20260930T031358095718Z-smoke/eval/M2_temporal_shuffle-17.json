@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 1840000,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2_temporal_shuffle",
+    "first_action": [
+      0.052726276218891144,
+      0.08942592144012451
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008428705831361082,
+    "lateral_error_m": 0.00030552158758031926,
+    "peak_force_n": 4.420622404047524,
+    "latency_s": 0.555,
+    "search_path_m": 0.003722868400717777,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840001,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2_temporal_shuffle",
+    "first_action": [
+      0.2838094234466553,
+      0.19865497946739197
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 0.00026910078756302996,
+    "lateral_error_m": 0.004999627191324583,
+    "peak_force_n": 5.987934657157895,
+    "latency_s": 1.6,
+    "search_path_m": 0.006723577821469553,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840002,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2_temporal_shuffle",
+    "first_action": [
+      -0.47007086873054504,
+      0.061647962778806686
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008379258469360726,
+    "lateral_error_m": 0.00035848199401557115,
+    "peak_force_n": 4.759666193627147,
+    "latency_s": 0.58,
+    "search_path_m": 0.004432558526340757,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  },
+  {
+    "seed": 1840003,
+    "mirror": 1,
+    "train_seed": 17,
+    "condition": "M2_temporal_shuffle",
+    "first_action": [
+      -0.34332573413848877,
+      0.05555688962340355
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.00837301495499815,
+    "lateral_error_m": 0.00035368091304147314,
+    "peak_force_n": 3.850586174074685,
+    "latency_s": 0.29,
+    "search_path_m": 0.0032523171091046136,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1
+  }
+]

@@ -1,0 +1,1250 @@
+[
+  {
+    "seed": 1750000,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.8955411314964294,
+      0.9579218029975891
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008442004764690656,
+    "lateral_error_m": 0.00035445920473264783,
+    "peak_force_n": 4.84951248689486,
+    "latency_s": 0.275,
+    "search_path_m": 0.0033567236792213487,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.11261540690340707,
+    "teacher_action": [
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750000,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.925199031829834,
+      -0.519855260848999
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008367939384122872,
+    "lateral_error_m": 0.0003536163018676453,
+    "peak_force_n": 4.849512486894866,
+    "latency_s": 0.29,
+    "search_path_m": 0.0034204426632891798,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.48593636967567777,
+    "teacher_action": [
+      1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750001,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.921221911907196,
+      -0.42505013942718506
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.011844489375905837,
+    "lateral_error_m": 0.0003615651193648609,
+    "peak_force_n": 4.812850032467029,
+    "latency_s": 0.65,
+    "search_path_m": 0.004119233536965117,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.4272259411337076,
+    "teacher_action": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750001,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9719355702400208,
+      -0.08879894763231277
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008334116450033525,
+    "lateral_error_m": 0.0003579207139809434,
+    "peak_force_n": 4.81285003246702,
+    "latency_s": 0.25,
+    "search_path_m": 0.003574148384502623,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.9116331334773509,
+    "teacher_action": [
+      -1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750002,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9632256627082825,
+      -0.6751579642295837
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008404670630947346,
+    "lateral_error_m": 0.00020194540766080144,
+    "peak_force_n": 4.119765609252456,
+    "latency_s": 0.235,
+    "search_path_m": 0.003778606727104396,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.2955877721736747,
+    "teacher_action": [
+      -1.0,
+      -0.9684492514771786
+    ]
+  },
+  {
+    "seed": 1750002,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9789549708366394,
+      -0.07589508593082428
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008311323792472352,
+    "lateral_error_m": 0.0003655046364156538,
+    "peak_force_n": 4.119765609252493,
+    "latency_s": 0.31,
+    "search_path_m": 0.0038691061352911864,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.0445563595750196,
+    "teacher_action": [
+      1.0,
+      0.9684492514771645
+    ]
+  },
+  {
+    "seed": 1750003,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9666510820388794,
+      -0.3918769061565399
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 2.6066612572022557e-05,
+    "lateral_error_m": 0.0074865185158777174,
+    "peak_force_n": 5.017925989722733,
+    "latency_s": 1.6,
+    "search_path_m": 0.010431033591781332,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.6090368195724453,
+    "teacher_action": [
+      -1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750003,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9843011498451233,
+      0.3116520941257477
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 0.0002956041725141398,
+    "lateral_error_m": 0.004977501854185747,
+    "peak_force_n": 4.700980928396609,
+    "latency_s": 1.6,
+    "search_path_m": 0.008959668464430116,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.6885269010123379,
+    "teacher_action": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750004,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.416076123714447,
+      -0.8547922372817993
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008428491897872533,
+    "lateral_error_m": 8.237790366516855e-05,
+    "peak_force_n": 4.671761087564578,
+    "latency_s": 0.265,
+    "search_path_m": 0.0031104375416718968,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.2603341999547697,
+    "teacher_action": [
+      0.20000067089190926,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750004,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.59046870470047,
+      0.983936607837677
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008448187821665178,
+    "lateral_error_m": 0.00020630536963856425,
+    "peak_force_n": 4.6717610875645805,
+    "latency_s": 0.265,
+    "search_path_m": 0.0031914648748059514,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.3907983085863267,
+    "teacher_action": [
+      -0.20000067089210144,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750005,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9926080703735352,
+      0.5307942032814026
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008395536131380995,
+    "lateral_error_m": 0.00031087732457649896,
+    "peak_force_n": 3.4665780773771098,
+    "latency_s": 0.35,
+    "search_path_m": 0.0045677481092454165,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.4692640198203314,
+    "teacher_action": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750005,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9310182929039001,
+      -0.6854169368743896
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008448926893777804,
+    "lateral_error_m": 0.00029086227075986485,
+    "peak_force_n": 3.4665780773771395,
+    "latency_s": 0.375,
+    "search_path_m": 0.004693093774841881,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.3220574164949223,
+    "teacher_action": [
+      -1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750006,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9933033585548401,
+      -0.239943727850914
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008416823653210139,
+    "lateral_error_m": 0.00017992705321784615,
+    "peak_force_n": 4.052286187543531,
+    "latency_s": 0.335,
+    "search_path_m": 0.0036066784802431936,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.2399618112036623,
+    "teacher_action": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750006,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9902454018592834,
+      0.30237239599227905
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008420311662634454,
+    "lateral_error_m": 0.00034735899281720196,
+    "peak_force_n": 4.052286187542501,
+    "latency_s": 0.365,
+    "search_path_m": 0.003996095449833844,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.3024089258092315,
+    "teacher_action": [
+      -1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750007,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.6624046564102173,
+      0.7011677026748657
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008467533553339348,
+    "lateral_error_m": 0.00023335031375264914,
+    "peak_force_n": 4.28480540227323,
+    "latency_s": 0.25,
+    "search_path_m": 0.0037551565386814644,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.45085624974943056,
+    "teacher_action": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750007,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.7808256149291992,
+      -0.15569627285003662
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008419578874320044,
+    "lateral_error_m": 0.0003537228407674218,
+    "peak_force_n": 4.28480540227312,
+    "latency_s": 0.25,
+    "search_path_m": 0.003964013462525939,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.8722879081762417,
+    "teacher_action": [
+      -1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750008,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9589020013809204,
+      -0.11913133412599564
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008393066434750008,
+    "lateral_error_m": 0.00035306589006486,
+    "peak_force_n": 4.331067935001703,
+    "latency_s": 0.27,
+    "search_path_m": 0.003719661262645728,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.23263169844135564,
+    "teacher_action": [
+      -1.0,
+      -0.3481039561339902
+    ]
+  },
+  {
+    "seed": 1750008,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9872568845748901,
+      -0.4118691384792328
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008075592829718148,
+    "lateral_error_m": 0.0003825353330331419,
+    "peak_force_n": 7.801790635966049,
+    "latency_s": 1.01,
+    "search_path_m": 0.004998733144550705,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.7600799244334748,
+    "teacher_action": [
+      1.0,
+      0.3481039561340299
+    ]
+  },
+  {
+    "seed": 1750009,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.8973097205162048,
+      -0.8689161539077759
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 5.752515644827372e-05,
+    "lateral_error_m": 0.005987426287285165,
+    "peak_force_n": 4.976093201146435,
+    "latency_s": 1.6,
+    "search_path_m": 0.010015605774475628,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.16651807171232155,
+    "teacher_action": [
+      -1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750009,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9921443462371826,
+      -0.5240833163261414
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 7.575804582358667e-05,
+    "lateral_error_m": 0.005794654185326357,
+    "peak_force_n": 4.830905849049759,
+    "latency_s": 1.6,
+    "search_path_m": 0.009607618760792434,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.5241035615730745,
+    "teacher_action": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750010,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9863089323043823,
+      -0.5497770309448242
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008294401823974232,
+    "lateral_error_m": 0.0003617615366829691,
+    "peak_force_n": 5.044850464106241,
+    "latency_s": 0.42,
+    "search_path_m": 0.0051946723146700235,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.4504310904006336,
+    "teacher_action": [
+      1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750010,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9381963014602661,
+      0.7522861361503601
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008325807767620014,
+    "lateral_error_m": 0.0003595697659078519,
+    "peak_force_n": 5.044850464106274,
+    "latency_s": 0.46,
+    "search_path_m": 0.005318863785746242,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.2553073745439176,
+    "teacher_action": [
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750011,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9726992845535278,
+      0.7255510091781616
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008354978558946492,
+    "lateral_error_m": 0.00036229432916908726,
+    "peak_force_n": 3.0883613743622114,
+    "latency_s": 0.25,
+    "search_path_m": 0.003527424670684903,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.2758035127169608,
+    "teacher_action": [
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750011,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.987690269947052,
+      -0.21400564908981323
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.010652903039350384,
+    "lateral_error_m": 0.00036685875496023356,
+    "peak_force_n": 3.0883613743622087,
+    "latency_s": 0.515,
+    "search_path_m": 0.0036491174230095006,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.7860907384753381,
+    "teacher_action": [
+      1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750012,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.8556154370307922,
+      0.24082544445991516
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008347873609566996,
+    "lateral_error_m": 0.00035780114933424585,
+    "peak_force_n": 5.613709615616958,
+    "latency_s": 0.345,
+    "search_path_m": 0.004040395602847451,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.7886096936910899,
+    "teacher_action": [
+      0.6421693239153987,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750012,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.871062695980072,
+      0.845940887928009
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008467222853779592,
+    "lateral_error_m": 0.00013814394295110833,
+    "peak_force_n": 5.613709615616945,
+    "latency_s": 0.4,
+    "search_path_m": 0.0042235333580639255,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.8600779385551518,
+    "teacher_action": [
+      -0.6421693239153988,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750013,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9331007599830627,
+      -0.9395994544029236
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008382182742191772,
+    "lateral_error_m": 0.00035448999542166235,
+    "peak_force_n": 4.880258213787613,
+    "latency_s": 0.395,
+    "search_path_m": 0.00541264196437287,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.09013176034710677,
+    "teacher_action": [
+      -1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750013,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9919941425323486,
+      0.6846343278884888
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.00926724027015643,
+    "lateral_error_m": 0.00039522054129593413,
+    "peak_force_n": 4.8802582137873,
+    "latency_s": 0.515,
+    "search_path_m": 0.005578492264801414,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.3154672738972104,
+    "teacher_action": [
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750014,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9892123937606812,
+      0.7234650254249573
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008446166127164131,
+    "lateral_error_m": 0.0001935881346055668,
+    "peak_force_n": 4.598078105983594,
+    "latency_s": 0.31,
+    "search_path_m": 0.004383806183974413,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.2767453063948766,
+    "teacher_action": [
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750014,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9904749393463135,
+      -0.1809207648038864
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.012116083982521671,
+    "lateral_error_m": 0.00036288786881080503,
+    "peak_force_n": 4.598078105983572,
+    "latency_s": 0.775,
+    "search_path_m": 0.005115586200189739,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.8191346167205404,
+    "teacher_action": [
+      1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750015,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.5016792416572571,
+      0.6513155698776245
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.00844152092130656,
+    "lateral_error_m": 0.00025321798427412496,
+    "peak_force_n": 4.868102579681101,
+    "latency_s": 0.18,
+    "search_path_m": 0.0032708975080737914,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.8267954973567045,
+    "teacher_action": [
+      1.0,
+      -0.008432273054835503
+    ]
+  },
+  {
+    "seed": 1750015,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.953202486038208,
+      0.579963207244873
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008441520992605006,
+    "lateral_error_m": 0.00025603237592166777,
+    "peak_force_n": 4.868102579681118,
+    "latency_s": 0.18,
+    "search_path_m": 0.0034537587012211106,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.5734436467946444,
+    "teacher_action": [
+      -1.0,
+      0.008432273054835725
+    ]
+  },
+  {
+    "seed": 1750016,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9748137593269348,
+      0.8955686688423157
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008413618229478538,
+    "lateral_error_m": 0.0003483072194163745,
+    "peak_force_n": 4.480319068436205,
+    "latency_s": 0.285,
+    "search_path_m": 0.0041561949516446175,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.10742555397393812,
+    "teacher_action": [
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750016,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9916216135025024,
+      0.43453285098075867
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008412502581412433,
+    "lateral_error_m": 0.00024056840680709496,
+    "peak_force_n": 4.4803190684362235,
+    "latency_s": 0.305,
+    "search_path_m": 0.0041881175677651325,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.4345573177476336,
+    "teacher_action": [
+      1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750017,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9844291806221008,
+      0.8511747717857361
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008385049946737777,
+    "lateral_error_m": 0.0003533219500792199,
+    "peak_force_n": 4.513504205181704,
+    "latency_s": 0.385,
+    "search_path_m": 0.005095195092693789,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.14963755868473294,
+    "teacher_action": [
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750017,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9913960695266724,
+      -0.4324096143245697
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008199614751028973,
+    "lateral_error_m": 0.00036164765473132194,
+    "peak_force_n": 4.983621388179188,
+    "latency_s": 1.145,
+    "search_path_m": 0.006918580207031423,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.5676555941156342,
+    "teacher_action": [
+      1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750018,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9804033637046814,
+      -0.6467322111129761
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.00810956339057225,
+    "lateral_error_m": 0.000368341702394566,
+    "peak_force_n": 6.843017469955325,
+    "latency_s": 0.645,
+    "search_path_m": 0.004168503429334076,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.2383630129361756,
+    "teacher_action": [
+      1.0,
+      0.591475737357018
+    ]
+  },
+  {
+    "seed": 1750018,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9396425485610962,
+      0.0289382915943861
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008327963236865113,
+    "lateral_error_m": 0.00036095117647072506,
+    "peak_force_n": 2.7472761745265,
+    "latency_s": 0.285,
+    "search_path_m": 0.0035656282731211897,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.6233430750910062,
+    "teacher_action": [
+      -1.0,
+      -0.5914757373570168
+    ]
+  },
+  {
+    "seed": 1750019,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.9902874231338501,
+      -0.015324879437685013
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.011416048864309093,
+    "lateral_error_m": 0.0003889267917813855,
+    "peak_force_n": 4.69042643390968,
+    "latency_s": 0.71,
+    "search_path_m": 0.004559230007367433,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.9847230205513581,
+    "teacher_action": [
+      1.0,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750019,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.9915942549705505,
+      0.4073086380958557
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008352317308178687,
+    "lateral_error_m": 0.00036042488954731415,
+    "peak_force_n": 4.690426433909661,
+    "latency_s": 0.27,
+    "search_path_m": 0.0036992010108982715,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.5927509654359826,
+    "teacher_action": [
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750020,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.7130345106124878,
+      0.8476806879043579
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008400251180328224,
+    "lateral_error_m": 0.00035346973001597646,
+    "peak_force_n": 4.755465392456049,
+    "latency_s": 0.45,
+    "search_path_m": 0.004749394741590271,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.2610640313142543,
+    "teacher_action": [
+      -0.538796675385556,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750020,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.4006790220737457,
+      -0.5225496888160706
+    ],
+    "success": 0,
+    "force_failure": 0,
+    "timeout": 1,
+    "insertion_depth_m": 3.616477131753934e-05,
+    "lateral_error_m": 0.009372351460953278,
+    "peak_force_n": 4.755465392456053,
+    "latency_s": 1.6,
+    "search_path_m": 0.011385705362752562,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 1.053837456995283,
+    "teacher_action": [
+      0.5387966753855628,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750021,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.7653098702430725,
+      0.9172887802124023
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008425665045392057,
+    "lateral_error_m": 0.0003554317818987313,
+    "peak_force_n": 3.3966714397886397,
+    "latency_s": 0.285,
+    "search_path_m": 0.0033150541228783013,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.11905898102601165,
+    "teacher_action": [
+      0.8509480339564539,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750021,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.476555734872818,
+      -0.9553450345993042
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008363971314587047,
+    "lateral_error_m": 0.000353843469442554,
+    "peak_force_n": 3.396671439788638,
+    "latency_s": 0.27,
+    "search_path_m": 0.0032679404406889875,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.3770459647683266,
+    "teacher_action": [
+      -0.8509480339564675,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750022,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.902273952960968,
+      -0.8220105171203613
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.00845502944253917,
+    "lateral_error_m": 0.00015020782459175484,
+    "peak_force_n": 4.921907449638621,
+    "latency_s": 0.31,
+    "search_path_m": 0.004040306854122522,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.4333117773120392,
+    "teacher_action": [
+      0.507205806508287,
+      -1.0
+    ]
+  },
+  {
+    "seed": 1750022,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.8795464634895325,
+      0.9630286693572998
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008452483971469657,
+    "lateral_error_m": 0.0003502579635305783,
+    "peak_force_n": 4.921907449638519,
+    "latency_s": 0.305,
+    "search_path_m": 0.004103688454308268,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.37417167735030904,
+    "teacher_action": [
+      -0.5072058065077144,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750023,
+    "mirror": 1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      0.495547890663147,
+      0.6664738655090332
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008389187117099947,
+    "lateral_error_m": 0.00035448435675594577,
+    "peak_force_n": 2.8857971412408343,
+    "latency_s": 0.24,
+    "search_path_m": 0.0025793593754016818,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.4129961031615481,
+    "teacher_action": [
+      0.2519783957789607,
+      1.0
+    ]
+  },
+  {
+    "seed": 1750023,
+    "mirror": -1,
+    "train_seed": 29,
+    "condition": "M0",
+    "first_action": [
+      -0.7347773313522339,
+      -0.8657562136650085
+    ],
+    "success": 1,
+    "force_failure": 0,
+    "timeout": 0,
+    "insertion_depth_m": 0.008349084184435253,
+    "lateral_error_m": 0.0003563671124173265,
+    "peak_force_n": 2.8857971412404146,
+    "latency_s": 0.23,
+    "search_path_m": 0.0027210251940346097,
+    "prefix_force_failure": 0,
+    "prefix_success": 0,
+    "prefix_contact": 1,
+    "initial_action_error": 0.5011149632172646,
+    "teacher_action": [
+      -0.2519783957789607,
+      -1.0
+    ]
+  }
+]

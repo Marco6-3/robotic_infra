@@ -1,0 +1,8 @@
+{
+  "main_rollouts": 1008,
+  "ambiguity_rollouts": 126,
+  "matched_pairs": 7,
+  "already_excessive_slip_at_branch": 1,
+  "all_condition_seed_grids_complete": true,
+  "checkpoint_hashes_unchanged": true
+}

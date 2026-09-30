@@ -1,0 +1,89 @@
+version: active-tactile-insertion-pilot-v1
+stage: Pilot
+sample_ms: 5
+history_ms: 300
+probe_ms: 300
+settle_ms: 350
+horizon_ms: 1600
+physics_ms: 1
+peg_radius_m: 0.005
+hole_radius_m: 0.0054
+chamfer_m: 0.0012
+chamfer_depth_m: 0.0015
+hole_depth_m: 0.012
+hole_facets: 24
+offset_radius_m:
+- 0.0008
+- 0.002
+friction:
+- 0.15
+- 0.35
+mass_kg:
+- 0.045
+- 0.065
+motor_kp:
+- 8000.0
+- 12000.0
+motor_damping: 100.0
+mount_stiffness: 15000.0
+mount_damping: 30.0
+preload_n: 1.5
+safe_force_n: 8.0
+insertion_depth_m: 0.008
+probe_depth_cap_m: 0.0055
+success_hold_ms: 20
+max_action_m: 4.0e-05
+workspace_m: 0.006
+probe_amplitude_m:
+- 0.0002
+- 0.001
+probe_duration_ms:
+- 30
+- 90
+tactile_grid: 4
+tactile_extent_y_m: 0.01
+tactile_extent_z_m: 0.012
+tactile_sigma_m: 0.003
+tactile_noise_m: 5.0e-07
+tactile_quantum_m: 2.0e-06
+q_quantum_m: 5.0e-06
+model:
+  hidden: 128
+  layers: 2
+  heads: 4
+  ff: 256
+  dropout: 0.0
+train_seeds:
+- 17
+- 29
+- 43
+seed_starts:
+  development: 1710000
+  train: 1720000
+  validation: 1730000
+  test: 1740000
+  ambiguity: 1750000
+train_episodes: 80
+validation_episodes: 16
+eval_episodes: 48
+train_steps: 800
+train_batch_size: 64
+eval_batch_size: 48
+learning_rate: 0.0003
+weight_decay: 0.0001
+gradient_clip: 1.0
+checkpoint_every: 200
+cpu_threads: 4
+workers: 4
+device: cuda
+bootstrap_samples: 4000
+bootstrap_seed: 6182
+minimum_effect: 0.05
+ambiguity:
+  seeds: 24
+  tactile_scale_m: 1.0e-05
+  q_scale_m: 5.0e-05
+  rms_limit: 1.0
+  linf_limit: 3.0
+  cosine_max: -0.5
+  min_pairs: 10

@@ -1,0 +1,24 @@
+[
+  {
+    "seed": 1850000,
+    "tactile_rms": 2.8737969398498535,
+    "q_rms": 5.284910202026367,
+    "tq_rms": 3.1535446643829346,
+    "tq_linf": 20.200000762939453,
+    "action_history_rms": 1.624285340309143,
+    "expert_cosine": -1.0,
+    "valid_prefix": true,
+    "matched": false
+  },
+  {
+    "seed": 1850001,
+    "tactile_rms": 2.4561774730682373,
+    "q_rms": 6.930001735687256,
+    "tq_rms": 3.103567600250244,
+    "tq_linf": 12.000000953674316,
+    "action_history_rms": 1.0891087055206299,
+    "expert_cosine": -1.0,
+    "valid_prefix": true,
+    "matched": false
+  }
+]

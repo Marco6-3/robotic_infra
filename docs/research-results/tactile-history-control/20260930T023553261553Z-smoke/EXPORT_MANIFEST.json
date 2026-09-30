@@ -1,0 +1,184 @@
+{
+  "schema": 1,
+  "scope": "Curated Pilot evidence; original run files unchanged. Binary trajectories, datasets, weights and host process logs remain local.",
+  "files": {
+    "PROTOCOL.md": {
+      "sha256": "493d00830e5705fea117a02104f1bf0859630a5b37255a9b5b309ec6f3f91ba9",
+      "bytes": 6475
+    },
+    "collect.complete.json": {
+      "sha256": "d51d5a0eec51450c3d6d3fef23ea487c09c4f3852644c21788bc9e3d470ea733",
+      "bytes": 34
+    },
+    "config.yaml": {
+      "sha256": "7d15cb24df49edf5c2cc33a3e15d018ffe646dbc1a48fe7dae4bf1e82f2076a3",
+      "bytes": 1430
+    },
+    "data/train/0000.json": {
+      "sha256": "c1f8d7ddbcee84ee221662811db580c43d866960df2193fce579988beee85ddb",
+      "bytes": 561
+    },
+    "data/train/0001.json": {
+      "sha256": "a8ca6c869eada4d491717719ad1df031b4b3a6b16bd984c283e8afcf5f4ed16e",
+      "bytes": 559
+    },
+    "data/train/0002.json": {
+      "sha256": "bcd422a3dbaa54fdbb6632cdad7228aba5c21bc85fbb59bd77a4e7e6f75ba0cb",
+      "bytes": 561
+    },
+    "data/train/0003.json": {
+      "sha256": "7b6f263bff90be8dd03540b96d22d20758b49b2e2c90654427e7910c6f0efa31",
+      "bytes": 559
+    },
+    "data/validation/0000.json": {
+      "sha256": "2e957f7dcc2090b25e02f55c69c81ba333f24799010823c85e67b84302428607",
+      "bytes": 562
+    },
+    "data/validation/0001.json": {
+      "sha256": "43d03429732ef53b2f8c1e9273c726e8dfe2b12e2aa65b0d6386756b27bd0628",
+      "bytes": 558
+    },
+    "environment.json": {
+      "sha256": "0d3c72ed66fa70cc043031099862b78af639ad461be2366ef4c0e201edb561e1",
+      "bytes": 285
+    },
+    "failure.json": {
+      "sha256": "539efd40a732e40dd6dbda4fc7940f34a0f1c8d4a2fb56680b37e1e7fb2ccc63",
+      "bytes": 2424
+    },
+    "manifest.json": {
+      "sha256": "95fad48d437803ca314f5bf19eec23262bd3ebca71e8df03fa6baef84a681f79",
+      "bytes": 2332
+    },
+    "progress.jsonl": {
+      "sha256": "41b40fb6cb147d9f183dc4a862d78d4d53ebbc00a49d414fa4ba4566d5dd8396",
+      "bytes": 107
+    },
+    "source/experiments/iros2027/contact/task.py": {
+      "sha256": "f6d5f89ea5d5ec21b14f53469922b41fa6d1a3bbaabf3f24d9a85d99b6e02e88",
+      "bytes": 4644
+    },
+    "source/experiments/iros2027/i001_v2/physics.py": {
+      "sha256": "c63b0107cacf0a58abe4b849d318d8126c740cbe6dc29b541757ea2e86570d27",
+      "bytes": 7238
+    },
+    "source/experiments/tactile_history_control/PROTOCOL.md": {
+      "sha256": "493d00830e5705fea117a02104f1bf0859630a5b37255a9b5b309ec6f3f91ba9",
+      "bytes": 6475
+    },
+    "source/experiments/tactile_history_control/__init__.py": {
+      "sha256": "4c0fd449ed8f02b7ef8e352b96a89dc49c60ad63427fcf6880be5daa5e4f90c6",
+      "bytes": 82
+    },
+    "source/experiments/tactile_history_control/ablation_runner.py": {
+      "sha256": "7bf3a32f76af6aea1a3f6c6342e722bf5526b88f0ab1970840abd1de5569d300",
+      "bytes": 215
+    },
+    "source/experiments/tactile_history_control/ambiguity.py": {
+      "sha256": "522d537cdd1a4f1214be75a27198204041d8b68f7a32269e1090b0ad713ae159",
+      "bytes": 3557
+    },
+    "source/experiments/tactile_history_control/analysis.py": {
+      "sha256": "7f07dbd7d68536c2f70273e36ee7d4ec35e6f8869f4141a0407ee7a608645407",
+      "bytes": 15181
+    },
+    "source/experiments/tactile_history_control/dataset.py": {
+      "sha256": "a20eb813b60dbe5be11972ebd6deea4f9c4e306767a03a9b4b96bb8961369ebc",
+      "bytes": 2391
+    },
+    "source/experiments/tactile_history_control/development.py": {
+      "sha256": "bed7614113054105fb1f808adf903d138c7782f1e3137ee40f46447946e96cc7",
+      "bytes": 1382
+    },
+    "source/experiments/tactile_history_control/environment.py": {
+      "sha256": "a9f981220a98af70816d7bf2e940ede8d40af076062057403a946a763e043113",
+      "bytes": 8801
+    },
+    "source/experiments/tactile_history_control/evaluate.py": {
+      "sha256": "0f44c5639885850893cecf149a6effdffd8cd1ee68da3556945085f344243ee0",
+      "bytes": 3561
+    },
+    "source/experiments/tactile_history_control/policy.py": {
+      "sha256": "440ac420988342d3d652136bc771c789e883bb5318a28b93d83e8e90ed602ce8",
+      "bytes": 1470
+    },
+    "source/experiments/tactile_history_control/run.py": {
+      "sha256": "2b506f8a416ed2af70ec9b8c8034012eaf72a8cede81cc2148bd78ca623b7c88",
+      "bytes": 4848
+    },
+    "source/experiments/tactile_history_control/train.py": {
+      "sha256": "1a67058d61445a246fcad6f88ac4bc26578a48c575641a28f92e3ea5362fa396",
+      "bytes": 3358
+    },
+    "source/experiments/tactile_history_control/utils.py": {
+      "sha256": "b8d98857aa3596f364474cec6a62639c7c4a6e3f50929e2184e8f0b8f7252015",
+      "bytes": 1198
+    },
+    "source/src/fr3_description/models/fr3_hand.xml": {
+      "sha256": "3115a01766a7ddd4841178123ae7da6322e52298bcdb4190e78a79c4ceb112f7",
+      "bytes": 14789
+    },
+    "source/src/fr3_description/models/scene.xml": {
+      "sha256": "58009a1383e4516f71937070182727e39839f338a0a18e7015e42b45b46efcad",
+      "bytes": 1945
+    },
+    "source/src/fr3_sim/fr3_sim/contact_proxy.py": {
+      "sha256": "807d3ee69638ac328d04dba4626412b8d2c7e079e6d78e2c6b1f5733e44fa041",
+      "bytes": 3227
+    },
+    "thc-ambiguity-development.json": {
+      "sha256": "359b4c977331024c9633ae8276480546a67010821c759575c1ecf04c04fa02fd",
+      "bytes": 1654
+    },
+    "thc-development-v1.json": {
+      "sha256": "1a90550d65148b1635c3aac4e16304de43043ec38d30525f9d4264e7b74657f5",
+      "bytes": 16357
+    },
+    "thc-development-v2.json": {
+      "sha256": "664061d0c0325bdca9570f9c046c0df19cc3b2315d711a210016b8f0509b5425",
+      "bytes": 16271
+    },
+    "timing.json": {
+      "sha256": "b8daa599ac87cf95fa6077e394e6145cd2333251495c676a31126b9ee9dfd621",
+      "bytes": 34
+    }
+  },
+  "omitted_local_files": {
+    "data/train/0000.npz": {
+      "sha256": "18ae4fc15665e7f5be5b905a9dea26c75c937f8dc0c4a0cd4e99a37fc7ba55af",
+      "bytes": 22417
+    },
+    "data/train/0001.npz": {
+      "sha256": "8a96fa63d33f020922e872174b952cb7e59fe21aad73b58b943dea4498707c92",
+      "bytes": 21398
+    },
+    "data/train/0002.npz": {
+      "sha256": "bf761107eb271030a722ede0ad70dfbab3663f6b70e3bb9d5686e79c6de18885",
+      "bytes": 21539
+    },
+    "data/train/0003.npz": {
+      "sha256": "51a979655149f3251e9d75eabb295f71b1028aee9973b7d4dbe859dfca5cc232",
+      "bytes": 21983
+    },
+    "data/validation/0000.npz": {
+      "sha256": "a132f1b55213018e976fa2f9ef3331f32f3d36dd5c0756f6c66b29ca7f14ad41",
+      "bytes": 21251
+    },
+    "data/validation/0001.npz": {
+      "sha256": "8b0e2ccc2777eac41a9e94420de2f6cc023952daaf08497fc1f0972dc695f012",
+      "bytes": 21294
+    },
+    "git-status.txt": {
+      "sha256": "ef87d6afd0c262f3b69fd34f719b8b202e34a513941ca3c2dfa2c868600ceeba",
+      "bytes": 144
+    },
+    "git.diff": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "normalizer.npz": {
+      "sha256": "4c3863c1de29a8ee47e97fc5478e966677dd30ca4628719683da53ab093432ae",
+      "bytes": 1008
+    }
+  }
+}

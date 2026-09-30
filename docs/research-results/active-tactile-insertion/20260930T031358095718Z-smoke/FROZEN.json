@@ -1,0 +1,34 @@
+{
+  "source": {
+    "experiments/active_tactile_insertion/__init__.py": "43583272a024a47b99bab93342064caff10d3c3885f9ddfe87f538466081f0da",
+    "experiments/active_tactile_insertion/utils.py": "cd172f4eaa3cf0d755e553ab7f3ec5cae1dfbb59ef42fcd28c52b81f6f0063b8",
+    "experiments/active_tactile_insertion/policy.py": "2947db656527b69783225055c8a456ea0bb7c03e687d87ce93485adbd07a4176",
+    "experiments/active_tactile_insertion/development.py": "eb482c950188b9a93f38d21388375cf72bf1ce50992731a8ea411097076555b8",
+    "experiments/active_tactile_insertion/evaluate.py": "3d7e6524344c9ba9642d9618fd526ade01be7053bc597a07e3f17996d55839d2",
+    "experiments/active_tactile_insertion/analysis.py": "3d3be383e7a21bd575f1be2b2f8f1805685faa2eebb5b1a1c41476696fedbcf4",
+    "experiments/active_tactile_insertion/diagnostics.py": "3903af08c066dc695cbde918cb0346f19cb9df5906705f24eb4dc54ed2519193",
+    "experiments/active_tactile_insertion/environment.py": "a1a262ea20a9d8ca874806b6b999bfcfb030980a5f5530d8759111840a063db9",
+    "experiments/active_tactile_insertion/dataset.py": "41101b00e84e24359a158095b77f335a2b663e3ffccd73c6d409e7f7d33c17ec",
+    "experiments/active_tactile_insertion/train.py": "b45f52a5cbad1675f0a42ee17742da2e21b33a155e8843f50fe210062dacb045",
+    "experiments/active_tactile_insertion/run.py": "a084b14612941a78756d31915a4c847857be68350fd066c23eb677084a67a193",
+    "experiments/active_tactile_insertion/LITERATURE.md": "2a2eae69a1d7ef6c7c3ff7acfe59e2bb339a27d2cccd6cda1c98fe837f7ce60a",
+    "experiments/active_tactile_insertion/README.md": "1079c1c89c2c86e4552ffef534531969fe1135fea1d7741d2cd41ef9c3820433",
+    "experiments/active_tactile_insertion/PROTOCOL.md": "45a2acd7a7f589701d8a1cb75467f2ffcd16c536713d3b8761b627ee321534aa",
+    "tests/test_active_tactile_insertion.py": "709088dbeaf33906963246e261e0b70ddc3cefe4ddca7fbe80bf6a423dd328f4",
+    "experiments/tactile_history_control/analysis.py": "159a3d111d88e40ae37596d0e19197ce7687016b8edb1841acb88dca53d03944",
+    "experiments/tactile_history_control/utils.py": "b8d98857aa3596f364474cec6a62639c7c4a6e3f50929e2184e8f0b8f7252015"
+  },
+  "files": {
+    "models/M1-17/final.pt": "223f993ce48bff4d2f065b7ce95ac432834ad1c7180e8563a0c5ab28a90a601f",
+    "models/M2-17/final.pt": "93a8285525901a39c8c7f39163d7ea045ddc12f60c2072acfa80068f933808c1",
+    "models/M0-17/final.pt": "0c61e5737a449895649ced13a2a02a02125b978bdafa548bf4c4128eaf3b3bec",
+    "data/validation/0000.npz": "59ee3f61e294a3c4e64a7696bd4f906c9bbd25742f6cdb1aed81209295f2db7d",
+    "data/validation/0001.npz": "2c647bdc82b922284e51c37fca969788d4ac793fd7b151679af951f752f46b39",
+    "data/train/0003.npz": "9dc8b2e2b0b52ff8416b37abd1503a37f120d85b6152918a695cf1b393f5b21d",
+    "data/train/0000.npz": "8edd9daa589054fe503edd87c370c49cc1f557be05b8a3818fd902cf0c4c634d",
+    "data/train/0002.npz": "9b74c242fa2941e11cd3c84717428ab1acad55b4c4d9c1095a02cc1c7389beaf",
+    "data/train/0001.npz": "002f9b5ed7f4b12ecc6f5356f9e08d81d8bc081425baf11c385e18341392e94a",
+    "normalizer.npz": "ef61f7e6405ac9aed08529578309a71910c7aa89fc92e9a7e54ef44b2bdcea71",
+    "config.yaml": "dfdd12af63f301792e824fc861bbf9cdceb1f685afa84c97cdd4001e213ee42d"
+  }
+}

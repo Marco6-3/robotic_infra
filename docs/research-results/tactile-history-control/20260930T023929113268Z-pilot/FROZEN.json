@@ -1,0 +1,36 @@
+{
+  "config_sha256": "b329f6ace8fec4e9782a093e34c935d5c3400ec40f0d397e5b9bc33494315798",
+  "source": {
+    "experiments/tactile_history_control/ablation_runner.py": "7bf3a32f76af6aea1a3f6c6342e722bf5526b88f0ab1970840abd1de5569d300",
+    "experiments/tactile_history_control/__init__.py": "4c0fd449ed8f02b7ef8e352b96a89dc49c60ad63427fcf6880be5daa5e4f90c6",
+    "experiments/tactile_history_control/utils.py": "b8d98857aa3596f364474cec6a62639c7c4a6e3f50929e2184e8f0b8f7252015",
+    "experiments/tactile_history_control/ambiguity.py": "136db68591207d2c0f71be9e6776b0c70ac35bf044203c6367cc24574a28154a",
+    "experiments/tactile_history_control/policy.py": "09bdc873d0185ffca73bc6f329c5883011b81d778a18d6962452f0088b265a66",
+    "experiments/tactile_history_control/development.py": "bed7614113054105fb1f808adf903d138c7782f1e3137ee40f46447946e96cc7",
+    "experiments/tactile_history_control/evaluate.py": "4286fe778ea164449ff682d6809e929ed68da5f34cff3fdd13b1998773329355",
+    "experiments/tactile_history_control/analysis.py": "159a3d111d88e40ae37596d0e19197ce7687016b8edb1841acb88dca53d03944",
+    "experiments/tactile_history_control/environment.py": "72fe2428ffa4e7e2440c8ac560673d9e6091b6fa5f2ecccefc04b136c9239c68",
+    "experiments/tactile_history_control/dataset.py": "a20eb813b60dbe5be11972ebd6deea4f9c4e306767a03a9b4b96bb8961369ebc",
+    "experiments/tactile_history_control/train.py": "1a67058d61445a246fcad6f88ac4bc26578a48c575641a28f92e3ea5362fa396",
+    "experiments/tactile_history_control/run.py": "afe96908687e2eee23ad4d5ff448a173927207c6c0cadc95ac0e59e4a3af20a3",
+    "tests/test_tactile_history_control.py": "c9415279c86550a9dcbf5ac2cbdc66cdb5b00638a8d602f16d66130041191d6c",
+    "experiments/tactile_history_control/PROTOCOL.md": "707b3b2076200fb831b1f69e993c3db07e45abcd1556c07d0afa3b6b100ba421",
+    "experiments/iros2027/contact/task.py": "f6d5f89ea5d5ec21b14f53469922b41fa6d1a3bbaabf3f24d9a85d99b6e02e88",
+    "experiments/iros2027/i001_v2/physics.py": "c63b0107cacf0a58abe4b849d318d8126c740cbe6dc29b541757ea2e86570d27",
+    "src/fr3_sim/fr3_sim/contact_proxy.py": "807d3ee69638ac328d04dba4626412b8d2c7e079e6d78e2c6b1f5733e44fa041",
+    "src/fr3_description/models/fr3_hand.xml": "3115a01766a7ddd4841178123ae7da6322e52298bcdb4190e78a79c4ceb112f7",
+    "src/fr3_description/models/scene.xml": "58009a1383e4516f71937070182727e39839f338a0a18e7015e42b45b46efcad"
+  },
+  "checkpoints": {
+    "models/M1-29/final.pt": "fb51412f03160b320bed13dc4b135900754e639190243d12ce2c2c976ee04356",
+    "models/M1-17/final.pt": "216056a1ff4f60393aeed0716431ccb702c212f45a2031ee01a2bf7593551c62",
+    "models/M0-29/final.pt": "2b9436823a3f37d67259539f6f9b760bf7f1266ed415a6065ab5302c4e602fa3",
+    "models/M0-43/final.pt": "f8967ca9acaecf0ebef462cfde72e4eed872bf04942155c448d831827fe8f2ca",
+    "models/M2-17/final.pt": "a65df086b6fa26f04312577bdb781ddf3525ecaa11ddc920bc40bd38c2f27cc5",
+    "models/M2-43/final.pt": "88fbbeee643bd9e72dcaa34b27987cb89139ad74ba8d8692d4969abce26d353b",
+    "models/M2-29/final.pt": "6ae9f8ca8cb7790633825ec1143c14038fe9568dfcdba15b8f3953876128d5a0",
+    "models/M0-17/final.pt": "2c3dae3e827a48641f12467f7b0892defea73d4e23743c7e5fd4ce185921b7c4",
+    "models/M1-43/final.pt": "cedc4e23bbdcf9c18ba1bf0fdd3fb79acae41dbf4df32a8375f737754f644ba6"
+  },
+  "normalizer_sha256": "85c232e76863f8e94421c2a3c56319a74fdde04d038d9062a49966cc06b9e0f7"
+}

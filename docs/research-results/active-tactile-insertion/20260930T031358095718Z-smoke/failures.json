@@ -1,0 +1,192 @@
+[
+  {
+    "condition": "brute_down",
+    "train_seed": -1,
+    "seed": 1840000,
+    "force_failure": 1,
+    "timeout": 0,
+    "peak_force_n": 8.149125795785825,
+    "lateral_error_m": 0.0010685117191204265,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "brute_down",
+    "train_seed": -1,
+    "seed": 1840001,
+    "force_failure": 1,
+    "timeout": 0,
+    "peak_force_n": 8.252268726400985,
+    "lateral_error_m": 0.001031284416164639,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "brute_down",
+    "train_seed": -1,
+    "seed": 1840002,
+    "force_failure": 1,
+    "timeout": 0,
+    "peak_force_n": 9.549175154536108,
+    "lateral_error_m": 0.0012986472909515454,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "M0",
+    "train_seed": 17,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.007364588970889225,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "constant_x",
+    "train_seed": -1,
+    "seed": 1840000,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.807380784704504,
+    "lateral_error_m": 0.005066750181235489,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "constant_x",
+    "train_seed": -1,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.0055866200366642095,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "constant_x",
+    "train_seed": -1,
+    "seed": 1840002,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.087346832494321,
+    "lateral_error_m": 0.007536746580292417,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "constant_x",
+    "train_seed": -1,
+    "seed": 1840003,
+    "force_failure": 1,
+    "timeout": 0,
+    "peak_force_n": 8.038967006029623,
+    "lateral_error_m": 0.000656202507701092,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "M2",
+    "train_seed": 17,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.005084067699617474,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "M2_action_shuffle",
+    "train_seed": 17,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.005158038509651813,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "nominal",
+    "train_seed": -1,
+    "seed": 1840000,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 4.420622404047524,
+    "lateral_error_m": 0.0013044329957631242,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "nominal",
+    "train_seed": -1,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.0013624478195556693,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "nominal",
+    "train_seed": -1,
+    "seed": 1840002,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 4.759666193627147,
+    "lateral_error_m": 0.001815138440994652,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "M2_temporal_shuffle",
+    "train_seed": 17,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.004999627191324583,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "spiral",
+    "train_seed": -1,
+    "seed": 1840000,
+    "force_failure": 1,
+    "timeout": 0,
+    "peak_force_n": 8.225956916660262,
+    "lateral_error_m": 0.00039383175381763226,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "spiral",
+    "train_seed": -1,
+    "seed": 1840001,
+    "force_failure": 1,
+    "timeout": 0,
+    "peak_force_n": 8.093719740712706,
+    "lateral_error_m": 0.0003711624598825487,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "spiral",
+    "train_seed": -1,
+    "seed": 1840002,
+    "force_failure": 1,
+    "timeout": 0,
+    "peak_force_n": 8.023024175547752,
+    "lateral_error_m": 0.000632532817162319,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "M1",
+    "train_seed": 17,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.004926988041805868,
+    "prefix_force_failure": 0
+  },
+  {
+    "condition": "M1_temporal_shuffle",
+    "train_seed": 17,
+    "seed": 1840001,
+    "force_failure": 0,
+    "timeout": 1,
+    "peak_force_n": 5.987934657157895,
+    "lateral_error_m": 0.004827293997831339,
+    "prefix_force_failure": 0
+  }
+]
