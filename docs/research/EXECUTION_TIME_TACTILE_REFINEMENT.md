@@ -1,6 +1,10 @@
-# 研究方向更新：执行时触觉反馈与在线动作修正
+# [ARCHIVED PLANNING NOTE] 执行时触觉反馈与在线动作修正
 
-更新日期：2026-09-30。状态：**研究方向已确定；新实验尚未实现或运行**。这是基于已完成 Pilot 和研究者决定形成的下一轮计划，不是新方法的成功报告，也不是对既有实验的重新标注。
+更新日期：2026-09-30。当前状态：**已冻结，不再作为 `robotic_infra` 的 active roadmap。**
+
+> 2026-09-30 仓库职责重置后，`robotic_infra` 仅维护通用基础设施。本文件保留为当时的研究规划与 provenance，不授权在本仓库继续 R0/R1/R2/R3、prediction head 或 architecture search。若该问题经新的 literature-first review 后仍值得研究，应迁移到独立 research repository。参见 [Research / Infrastructure Boundary](../RESEARCH_BOUNDARY.md)。
+
+以下内容按当时版本保留，不代表当前研究决策。
 
 ## 1. 当前主问题与转向依据
 
@@ -127,7 +131,7 @@ Pilot起步建议为80 train / 16 validation / 48 held-out任务种子、3训练
 
 另做新鲜/延迟触觉和q-only控制，以区分触觉内容与执行频率。若简单反馈已达到同等效果，报告这一结果。若base与teacher都很差，先修任务/数据覆盖；若所有方法都饱和，先修评估可辨别性，不能继续加模型追求差异。
 
-## 7. 当前决策与下一项交付
+## 7. 当时的决策与下一项交付（现已冻结）
 
 **Decision：REVISE → 新的execution-time feedback Pilot。** 既有action-history主线暂停扩展，负结果保留。A成立后才评估B；B成立后再讨论第二任务、泛化或公开基准，不自动跳到paper evaluation。
 

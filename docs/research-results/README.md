@@ -1,4 +1,6 @@
-# 受控机器人实验结果
+# 历史受控机器人实验结果
+
+> 本目录保存 `robotic_infra` 在 2026-09-30 scope reset 之前形成的科学证据、负结果和审计材料。它们继续用于 provenance 与复现，但不再定义该仓库的 active research roadmap。新的 research question 应进入独立 research repository。参见 [Research / Infrastructure Boundary](../RESEARCH_BOUNDARY.md)。
 
 这里保存已经完成的实验代码对应的正式证据摘要和可核验结果。原始 `runs/` 仍由 `.gitignore` 排除；本目录是选定证据：早期实验为原始run的逐字节副本，新Pilot则在原输出目录中按清单发布文件，不改写原实验。
 
