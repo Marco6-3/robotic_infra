@@ -1,8 +1,10 @@
-# FR3 MuJoCo 机器人学习平台（v1）
+# robotic_infra — FR3 MuJoCo 机器人学习基础设施
 
-这是 FR3 机器人学习平台的仿真优先实现。项目在 **Ubuntu 24.04 + ROS 2 Jazzy** 目标环境中，通过 `mujoco_ros2_control` 使用 MuJoCo，并让学习接口独立于 ROS 话题名和控制器名。
+这是一个**可复用的机器人学习基础设施仓库**，不是当前论文/研究项目本身。项目在 **Ubuntu 24.04 + ROS 2 Jazzy** 目标环境中，通过 `mujoco_ros2_control` 使用 MuJoCo，并让学习接口独立于 ROS 话题名和控制器名。
 
-## 第一次使用：先看自动抓取实验
+本仓库负责仿真、控制、录制、传感接口、因果时序、多频率调度、延迟/丢包注入、安全与复现。新的科学问题、文献地图、paper-specific 模型和实验应放在独立 research repository。边界见 [Research / Infrastructure Boundary](docs/RESEARCH_BOUNDARY.md)，AI agent 约束见 [AGENTS.md](AGENTS.md)。
+
+## 第一次使用：先验收基础设施
 
 ```bash
 cd /home/mingzhe/Documents/ws/robotic_infra
@@ -14,23 +16,29 @@ pixi run contact-report RUN_PATH  # 用上一条输出的 Results 目录查看�
 在仿真窗口按空格暂停、`R` 重来、`N` 下一条件、`Q` 退出，无需另开键盘控制终端。
 详细使用方式、配置修改和参考仓库见 [实验工作流](docs/experiment_workflow.md)。
 
-I001 已新增受控观测混叠实验：`pixi run i001-collect`、`pixi run i001-evaluate RUN_PATH`。
-[实测结果与结论边界](experiments/iros2027/i001/RESULTS.md)：历史优于带噪声单帧触觉，
-但未优于当前触觉加高精度本体状态。
-后续 I001-v2 的限定机制证据与 ContactBelief-v0 的 NO-GO 方法结果，见
-[受控实验结果索引](docs/research-results/README.md)。
+历史 I001/I002、ContactBelief、tactile-history-control 与 active-tactile-insertion 仍保留，用于 provenance、复现和回归验证；它们不再定义本仓库的“当前研究方向”。历史结果索引见 [docs/research-results/README.md](docs/research-results/README.md)。
+
 `sim-nvidia` 是 ROS 基础场景入口，`keyboard_policy.py` 只用于关节命令链路测试。
 
+## 仓库定位与研究边界（2026-09-30）
 
-## 当前研究方向（2026-09-30）
+本仓库已从“研究项目 + infra 混合仓库”降级为**纯基础设施仓库**。
 
-主线已转向 **执行时触觉反馈如何修正已规划、尚未执行的动作**：慢规划器输出action chunk，快触觉模块在执行中刷新观测；先验证fresh feedback，再检验预期接触与实际接触的偏差是否改善纠错。
+这里继续维护：
+- FR3 / MuJoCo / ROS 2 仿真与控制；
+- Robot / Action / Observation 合约；
+- 相机、触觉、本体状态的记录和同步；
+- 1 kHz physics 与多频率策略/传感调度；
+- latency / jitter / dropout / staleness 注入；
+- 数据集、回放、评估、安全与可复现工具。
 
-[研究方向与下一轮Pilot设计](docs/research/EXECUTION_TIME_TACTILE_REFINEMENT.md) 对照T-Rex、TacForcing与TacPAC，明确因果时序、强基线及停止条件。**新方向尚未实现或训练**，20/200 Hz只是候选调度设置。
+这里默认**不再新增**：
+- 新论文的 research question；
+- 为证明某个 hypothesis 而设计的网络结构；
+- paper-specific residual policy / tactile predictor / architecture search；
+- 以投稿为目标的 ablation ladder 和 claim。
 
-已完成的[active insertion Pilot](docs/research-results/active-tactile-insertion/20260930T031448344996Z-pilot/RESULTS.md) 中，history相对current为+6.94 pp，但past action相对T/q history为−2.08 pp；q历史可较好重建动作方向。保留负结果，暂停围绕action history独立收益扩展。此前[disturbed-grasp Pilot](docs/research-results/tactile-history-control/20260930T023929113268Z-pilot/RESULTS.md) 的constant-max为100%，也一并保留。
-
-两轮代码、逐episode指标、图表与审计已整理；公开范围、依赖和精确恢复限制见[发布说明](docs/research-results/PILOT_RELEASE_20260930.md)。插入实验使用Cartesian工装与几何触觉代理，不代表完整FR3或真机插入。
+此前的 [execution-time tactile refinement](docs/research/EXECUTION_TIME_TACTILE_REFINEMENT.md) 已冻结为历史 planning note，等待在独立 research project 完成 literature-first 重新论证后再决定是否继续。
 
 ## 本机运行与策略验收（2026-09-26）
 
@@ -136,7 +144,7 @@ src/fr3_description/ ROS 包、控制器/相机配置和启动文件
 config/              固定模型和运行时清单
 repos/               可复现的第三方 checkout 清单
 tests/               与依赖无关的接口和时序测试
-experiments/iros2027/ I001/I002 的配置、因果调度检查和后续论文实验
+experiments/          历史实验、复现证据与基础设施回归 fixtures；不作为当前研究 roadmap
 ```
 
 ## 可复现的模型输入
@@ -292,7 +300,7 @@ env -u PYTHONPATH -u PYTHONHOME .venv-recording/bin/python scripts/record_smoke.
 
 ROS Python 定时器设置为 1 ms，不构成硬实时保证，也不保证每个物理步恰好收到
 一次 ROS 消息。高频触觉实验应测量实际延迟，必要时将修正控制放入仿真步回调。
-当前仓库仍需为具体机器人学习实验增加任务、示范/训练入口和成功判据。
+具体论文级研究应在独立 research repository 中增加任务、训练、hypothesis 与成功判据，并复用本仓库的接口与基础设施。
 
 ## 后续替换为真实机器人
 
